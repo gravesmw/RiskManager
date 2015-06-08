@@ -1,0 +1,470 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="dd406e50-7124-4d32-8d6a-45917570c25f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Risk Manager View</ID>
+  <Name>Risk Manager View</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="45" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-33632" scrolltop="-4107" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="35454" y="16616" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimContainerView" left="-7471" top="10580" logicalid="17" controlid="1" masterid="0" hint1="0" hint2="0" width="6817" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a0000a11a00004d0c0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Report_DimContainerView" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimDefect" left="-15428" top="-3104" logicalid="18" controlid="2" masterid="0" hint1="0" hint2="0" width="3307" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a0000eb0c0000fe080000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Report_DimDefect" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimDefectGroup" left="-17095" top="1598" logicalid="19" controlid="3" masterid="0" hint1="0" hint2="0" width="4974" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a00006e130000fe080000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Report_DimDefectGroup" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimObject" left="-13205" top="8440" logicalid="20" controlid="4" masterid="0" hint1="0" hint2="0" width="3334" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a0000060d00004d0c0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Report_DimObject" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimObjectType" left="-13840" top="13989" logicalid="21" controlid="5" masterid="0" hint1="0" hint2="0" width="3969" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a0000810f0000fe080000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Report_DimObjectType" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FactScore" left="-9721" top="-3263" logicalid="22" controlid="6" masterid="0" hint1="0" hint2="0" width="3741" height="2620" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a00009d0e00003c0a0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Report_FactScore" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="ObjectToContainerBridge" left="-7379" top="6301" logicalid="23" controlid="7" masterid="0" hint1="0" hint2="0" width="6633" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000a0000e919000057070000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="Report_ObjectToContainerBridge" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-16107" top="-1102" logicalid="24" controlid="8" masterid="0" hint1="0" hint2="0" width="2632" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DimDefect-DimDefectGroup]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="2" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-15708" y="1598" />
+                    <point x="-15708" y="398" />
+                    <point x="-13775" y="398" />
+                    <point x="-13775" y="-802" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-11937" top="-943" logicalid="25" controlid="9" masterid="0" hint1="0" hint2="0" width="4386" height="9883" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FactScore-DimObject]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="6" sourceattachpoint="4" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-11538" y="8440" />
+                    <point x="-11538" y="3899" />
+                    <point x="-7851" y="3899" />
+                    <point x="-7851" y="-643" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-12421" top="-2352" logicalid="26" controlid="10" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[FactScore-DimDefect]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="6" sourceattachpoint="13" destattachpoint="18" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-12121" y="-1953" />
+                    <point x="-9721" y="-1953" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-11838" top="11289" logicalid="27" controlid="11" masterid="0" hint1="0" hint2="0" width="932" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DimObject-DimObjectType]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="4" sourceattachpoint="8" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-11306" y="13989" />
+                    <point x="-11306" y="12789" />
+                    <point x="-11538" y="12789" />
+                    <point x="-11538" y="11589" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-10171" top="6940" logicalid="28" controlid="12" masterid="0" hint1="0" hint2="0" width="3092" height="3474" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[ObjectToContainerBridge-DimObject]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="7" sourceattachpoint="15" destattachpoint="24" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-9871" y="10014" />
+                    <point x="-8625" y="10014" />
+                    <point x="-8625" y="7240" />
+                    <point x="-7379" y="7240" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-4462" top="7880" logicalid="29" controlid="13" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[ObjectToContainerBridge-DimContainerView]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="7" sourceattachpoint="12" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-4063" y="10580" />
+                    <point x="-4063" y="8180" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-8771" top="9280" logicalid="30" controlid="14" masterid="0" hint1="0" hint2="0" width="2258" height="2724" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DimContainerView-DimContainerView]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="1" sourceattachpoint="28" destattachpoint="2" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-7471" y="11604" />
+                    <point x="-8471" y="11604" />
+                    <point x="-8471" y="9580" />
+                    <point x="-6813" y="9580" />
+                    <point x="-6813" y="10580" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-18395" top="298" logicalid="31" controlid="15" masterid="0" hint1="0" hint2="0" width="2437" height="2851" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DimDefectGroup-DimDefectGroup]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="3" sourceattachpoint="20" destattachpoint="2" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-17095" y="2749" />
+                    <point x="-18095" y="2749" />
+                    <point x="-18095" y="598" />
+                    <point x="-16258" y="598" />
+                    <point x="-16258" y="1598" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="-15140" top="12689" logicalid="32" controlid="16" masterid="0" hint1="0" hint2="0" width="2484" height="2851" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DimObjectType-DimObjectType]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="5" sourceattachpoint="16" destattachpoint="2" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="-13840" y="15140" />
+                    <point x="-14840" y="15140" />
+                    <point x="-14840" y="12989" />
+                    <point x="-12956" y="12989" />
+                    <point x="-12956" y="13989" />
+                  </connector>
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>-33632</DiagramViewPortLeft>
+            <DiagramViewPortTop>-4107</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>75</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Risk Manager Data Source</DataSourceID>
+  <Schema>
+    <xs:schema id="Risk_x0020_Manager_x0020_View" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Risk_x0020_Manager_x0020_View" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="46df27b5-c9a3-480b-95a9-bb13fc9f066a">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Report_DimContainerView" msprop:design-time-name="d474939d-4001-4f9a-b299-14b7dedd49d6" msprop:FriendlyName="DimContainerView" msprop:DbSchemaName="Report" msprop:DbTableName="DimContainerView" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ViewKey" msprop:design-time-name="36553ad5-e9d8-4470-9af6-a0950df06e00" msprop:DbColumnName="ViewKey" msprop:FriendlyName="ViewKey" type="xs:int" />
+                  <xs:element name="ViewName" msprop:design-time-name="7e715201-6d72-4d56-baa9-85cb7502e090" msprop:DbColumnName="ViewName" msprop:FriendlyName="ViewName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="128" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ContainerViewKey" msprop:design-time-name="fbe1cc19-0fd7-4742-a58f-0391f0ec8b74" msprop:DbColumnName="ContainerViewKey" msprop:FriendlyName="ContainerViewKey" type="xs:int" />
+                  <xs:element name="ParentContainerViewKey" msprop:design-time-name="4d9ecb9a-3b87-41f4-9044-a7a34db24b83" msprop:DbColumnName="ParentContainerViewKey" msprop:FriendlyName="ParentContainerViewKey" type="xs:int" minOccurs="0" />
+                  <xs:element name="Name" msprop:design-time-name="5dbcdd45-2084-455d-8112-dfe9d77fabb0" msprop:DbColumnName="Name" msprop:FriendlyName="Name" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="128" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Report_DimDefect" msprop:design-time-name="f08d5fa0-eb4a-4a32-aeab-95832f60bedd" msprop:FriendlyName="DimDefect" msprop:DbSchemaName="Report" msprop:DbTableName="DimDefect" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DefectKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="6d7b8e3a-b427-4c9a-b287-b1ac123c0ddd" msprop:DbColumnName="DefectKey" msprop:FriendlyName="DefectKey" type="xs:int" />
+                  <xs:element name="Name" msprop:design-time-name="815f380f-0a93-4e7c-984a-30b4c4520cf0" msprop:DbColumnName="Name" msprop:FriendlyName="Name">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="256" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DefectGroupKey" msprop:design-time-name="d4c4c537-746c-4094-9b5f-7bdbd68633be" msprop:DbColumnName="DefectGroupKey" msprop:FriendlyName="DefectGroupKey" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Report_DimDefectGroup" msprop:design-time-name="29519d72-c932-47c5-947e-59fad0807a7d" msprop:FriendlyName="DimDefectGroup" msprop:DbSchemaName="Report" msprop:DbTableName="DimDefectGroup" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DefectGroupKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="7f0b3761-f22b-44c9-94cc-f5caaae0f97c" msprop:DbColumnName="DefectGroupKey" msprop:FriendlyName="DefectGroupKey" type="xs:int" />
+                  <xs:element name="Name" msprop:design-time-name="5779e0d5-b156-4231-989a-5a5fe5e8b025" msprop:DbColumnName="Name" msprop:FriendlyName="Name">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="128" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ParentDefectGroupKey" msprop:design-time-name="5ebc5006-5225-4da1-83c9-9fc05e7c9fc7" msprop:DbColumnName="ParentDefectGroupKey" msprop:FriendlyName="ParentDefectGroupKey" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Report_DimObject" msprop:design-time-name="4efeb93b-1b4a-41aa-b401-f6145926ead1" msprop:FriendlyName="DimObject" msprop:DbSchemaName="Report" msprop:DbTableName="DimObject" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ObjectKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="dc5c0d7b-98c0-44a2-8363-a81f8c93c585" msprop:DbColumnName="ObjectKey" msprop:FriendlyName="ObjectKey" type="xs:long" />
+                  <xs:element name="Name" msprop:design-time-name="27c5a590-983e-41d8-af61-f9b0635441df" msprop:DbColumnName="Name" msprop:FriendlyName="Name">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="400" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ParentObjectKey" msprop:design-time-name="9c0be543-fd79-4ace-a9f9-4e56aaffef42" msprop:DbColumnName="ParentObjectKey" msprop:FriendlyName="ParentObjectKey" type="xs:long" minOccurs="0" />
+                  <xs:element name="RootObjectKey" msdata:ReadOnly="true" msprop:design-time-name="3404dda2-a210-4e71-953f-c7611cf762eb" msprop:DbColumnName="RootObjectKey" msprop:FriendlyName="RootObjectKey" type="xs:long" minOccurs="0" />
+                  <xs:element name="ObjectTypeKey" msprop:design-time-name="d8e2651b-27d2-4c21-ba38-eeca4259d9a2" msprop:DbColumnName="ObjectTypeKey" msprop:FriendlyName="ObjectTypeKey" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Report_DimObjectType" msprop:design-time-name="009a68e3-2b98-498b-9e6c-e2c3d4ad6f85" msprop:FriendlyName="DimObjectType" msprop:DbSchemaName="Report" msprop:DbTableName="DimObjectType" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ObjectTypeKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="fbb3aac4-293f-43c5-b2ed-0e3d87d70db9" msprop:DbColumnName="ObjectTypeKey" msprop:FriendlyName="ObjectTypeKey" type="xs:int" />
+                  <xs:element name="Name" msprop:design-time-name="3cd20a4c-ac85-476a-8350-3085b3dc2324" msprop:DbColumnName="Name" msprop:FriendlyName="Name">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="128" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ParentObjectTypeKey" msprop:design-time-name="06a950da-c7e7-43db-bcad-b104db395ec1" msprop:DbColumnName="ParentObjectTypeKey" msprop:FriendlyName="ParentObjectTypeKey" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Report_FactScore" msprop:design-time-name="245a73da-bc3b-47ac-9d11-cb50bd5cb9b3" msprop:FriendlyName="FactScore" msprop:DbSchemaName="Report" msprop:DbTableName="FactScore" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ObjectKey" msprop:design-time-name="23f28d72-24e9-43ba-bea6-c6b25264cc8c" msprop:DbColumnName="ObjectKey" msprop:FriendlyName="ObjectKey" type="xs:long" />
+                  <xs:element name="DefectKey" msprop:design-time-name="a72bd469-044c-497c-bc08-57a6b222799a" msprop:DbColumnName="DefectKey" msprop:FriendlyName="DefectKey" type="xs:int" />
+                  <xs:element name="Score" msprop:design-time-name="ec189c68-c98e-407e-afdc-322ff9d8ed9f" msprop:DbColumnName="Score" msprop:FriendlyName="Score" type="xs:decimal" />
+                  <xs:element name="RootObjectKey" msprop:design-time-name="7af335cf-f94d-4fcf-886e-5322ad1c564e" msprop:DbColumnName="RootObjectKey" type="xs:long" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Report_ObjectToContainerBridge" msprop:design-time-name="667d7fa6-cb06-40d1-b833-55b9e9c19f5c" msprop:FriendlyName="ObjectToContainerBridge" msprop:DbSchemaName="Report" msprop:DbTableName="ObjectToContainerBridge" msprop:TableType="View">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ObjectKey" msprop:design-time-name="e2cea9ee-1e7c-4949-9ca1-a92a220dbf65" msprop:DbColumnName="ObjectKey" msprop:FriendlyName="ObjectKey" type="xs:long" />
+                  <xs:element name="ContainerViewKey" msprop:design-time-name="bb817dbe-3354-44b7-acd2-693cfd614532" msprop:DbColumnName="ContainerViewKey" msprop:FriendlyName="ContainerViewKey" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Report_DimContainerView" />
+          <xs:field xpath="ContainerViewKey" />
+        </xs:unique>
+        <xs:unique name="Report_DimDefect_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Report_DimDefect" />
+          <xs:field xpath="DefectKey" />
+        </xs:unique>
+        <xs:unique name="Report_DimDefectGroup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Report_DimDefectGroup" />
+          <xs:field xpath="DefectGroupKey" />
+        </xs:unique>
+        <xs:unique name="Report_DimObject_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Report_DimObject" />
+          <xs:field xpath="ObjectKey" />
+        </xs:unique>
+        <xs:unique name="Report_DimObjectType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Report_DimObjectType" />
+          <xs:field xpath="ObjectTypeKey" />
+        </xs:unique>
+        <xs:unique name="Report_FactScore_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Report_FactScore" />
+          <xs:field xpath="DefectKey" />
+          <xs:field xpath="ObjectKey" />
+        </xs:unique>
+        <xs:unique name="Report_ObjectToContainerBridge_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//Report_ObjectToContainerBridge" />
+          <xs:field xpath="ObjectKey" />
+          <xs:field xpath="ContainerViewKey" />
+        </xs:unique>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="DimDefect-DimDefectGroup" msdata:parent="Report_DimDefectGroup" msdata:child="Report_DimDefect" msdata:parentkey="DefectGroupKey" msdata:childkey="DefectGroupKey" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="FactScore-DimObject" msdata:parent="Report_DimObject" msdata:child="Report_FactScore" msdata:parentkey="ObjectKey" msdata:childkey="ObjectKey" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="FactScore-DimDefect" msdata:parent="Report_DimDefect" msdata:child="Report_FactScore" msdata:parentkey="DefectKey" msdata:childkey="DefectKey" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="DimObject-DimObjectType" msdata:parent="Report_DimObjectType" msdata:child="Report_DimObject" msdata:parentkey="ObjectTypeKey" msdata:childkey="ObjectTypeKey" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="ObjectToContainerBridge-DimObject" msdata:parent="Report_DimObject" msdata:child="Report_ObjectToContainerBridge" msdata:parentkey="ObjectKey" msdata:childkey="ObjectKey" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="ObjectToContainerBridge-DimContainerView" msdata:parent="Report_DimContainerView" msdata:child="Report_ObjectToContainerBridge" msdata:parentkey="ContainerViewKey" msdata:childkey="ContainerViewKey" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="DimContainerView-DimContainerView" msdata:parent="Report_DimContainerView" msdata:child="Report_DimContainerView" msdata:parentkey="ContainerViewKey" msdata:childkey="ParentContainerViewKey" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="DimDefectGroup-DimDefectGroup" msdata:parent="Report_DimDefectGroup" msdata:child="Report_DimDefectGroup" msdata:parentkey="DefectGroupKey" msdata:childkey="ParentDefectGroupKey" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="DimObjectType-DimObjectType" msdata:parent="Report_DimObjectType" msdata:child="Report_DimObjectType" msdata:parentkey="ObjectTypeKey" msdata:childkey="ParentObjectTypeKey" msprop:IsLogical="True" msprop:Description="" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <Risk_x0020_Manager_x0020_View xmlns="" />
+  </Schema>
+</DataSourceView>

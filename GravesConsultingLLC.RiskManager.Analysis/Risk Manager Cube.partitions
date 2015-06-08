@@ -1,0 +1,65 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a2f5a695-a932-450c-9370-049b0cc2f825" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Risk Manager Cube</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fact Score</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="0259dfd3-53d5-4f6a-8f94-ff969927aaba">
+          <ID>Fact Score</ID>
+          <Name>Fact Score</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="fdfcf55c-5eff-4551-b032-53582de8204f">
+            <DataSourceViewID>Risk Manager View</DataSourceViewID>
+            <TableID>Report_FactScore</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Object To Container Bridge</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="db70da11-5030-4f1b-b220-35bc09e11d1e">
+          <ID>Object To Container Bridge</ID>
+          <Name>Object To Container Bridge</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="e9f3bb02-3406-46a2-944b-adb58f2a82a4">
+            <DataSourceViewID>Risk Manager View</DataSourceViewID>
+            <TableID>Report_ObjectToContainerBridge</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Score 1</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="965d450b-274f-4a7a-bb91-3f0540eaba72">
+          <ID>Fact Score</ID>
+          <Name>Fact Score</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f6695d7d-123f-40a4-96ec-62a988f30c4b">
+            <DataSourceViewID>Risk Manager View</DataSourceViewID>
+            <TableID>Report_FactScore</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>
