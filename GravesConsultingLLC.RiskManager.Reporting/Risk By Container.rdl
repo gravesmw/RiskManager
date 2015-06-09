@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="Textbox6">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Containers</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox6</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ObjectCount">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!ObjectCount.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ObjectCount</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="ColumnGroup">
+                <GroupExpressions>
+                  <GroupExpression />
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox3">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Object Count</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox3</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Containers">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Containers.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Containers.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>1in</Size>
+                <CellContents>
+                  <Textbox Name="Containers">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!Containers.Value</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Containers</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>ReportData</DataSetName>
+        <Top>0.06944in</Top>
+        <Left>0.10292in</Left>
+        <Height>0.5in</Height>
+        <Width>2in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>2in</Height>
+    <Style />
+  </Body>
+  <Width>6.5in</Width>
+  <Page>
+    <PageHeader>
+      <Height>1.04042in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="Image3">
+          <Source>Embedded</Source>
+          <Value>RiskManager</Value>
+          <Height>1.01042in</Height>
+          <Width>1.35417in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Report: " &amp; Globals!ReportName &amp; Environment.NewLine &amp; "Runtime: " &amp; Format(Now(),"MM/dd/yyyy HH:mm:ss") &amp; Environment.NewLine &amp; "Server: " &amp; Globals!ReportServerUrl</Value>
+                  <Style>
+                    <Color>Purple</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.43625in</Top>
+          <Left>1.42361in</Left>
+          <Height>0.25in</Height>
+          <Width>4.97097in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>1.00917in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Page " &amp; Globals!OverallPageNumber &amp; " of " &amp; Globals!OverallTotalPages</Value>
+                  <Style>
+                    <Color>Purple</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.2175in</Top>
+          <Left>1.44271in</Left>
+          <Height>0.25in</Height>
+          <Width>3.61458in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="RiskManager">
+      <DataSourceReference>Risk Manager AS</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>cb70dc78-61bc-485c-9f88-accdf2b0f743</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="ContainerViewContainers">
+      <Query>
+        <DataSourceName>RiskManager</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Container View].[Containers].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Container View].[Containers].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Container View].[Containers].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Container View].[Containers].ALLMEMBERS ON ROWS FROM [Risk Manager Cube]</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>Risk Manager Cube</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Container View].[Containers].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Container View].[Containers].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Container View].[Containers].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Container View].[Containers].ALLMEMBERS ON ROWS FROM [Risk Manager Cube]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <rd:AutoGenerated>true</rd:AutoGenerated>
+        <rd:Hidden>true</rd:Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ReportData">
+      <Query>
+        <DataSourceName>RiskManager</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="ContainerViewContainers">
+            <Value>=Parameters!ContainerViewContainers.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText> SELECT NON EMPTY { [Measures].[Object Count], [Measures].[Raw Score] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Container View].[Containers].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@ContainerViewContainers, CONSTRAINED) ) ON COLUMNS FROM [Risk Manager Cube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Container View</DimensionName>
+                      <HierarchyName>Containers</HierarchyName>
+                      <HierarchyUniqueName>[Container View].[Containers]</HierarchyUniqueName>
+                      <LevelName>Level 02</LevelName>
+                      <UniqueName>[Container View].[Containers].[Level 02]</UniqueName>
+                    </ID>
+                    <ItemCaption>Containers</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                    <IsParentChild>true</IsParentChild>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Object Count</MeasureName>
+                      <UniqueName>[Measures].[Object Count]</UniqueName>
+                    </ID>
+                    <ItemCaption>Object Count</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Raw Score</MeasureName>
+                      <UniqueName>[Measures].[Raw Score]</UniqueName>
+                    </ID>
+                    <ItemCaption>Raw Score</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                </Items>
+              </Select>
+              <From>Risk Manager Cube</From>
+              <Filter>
+                <FilterItems>
+                  <FilterItem>
+                    <HierarchyUniqueName>[Container View].[Containers]</HierarchyUniqueName>
+                    <Condition xsi:type="EqualTo">
+                      <Members />
+                      <Parametrized>true</Parametrized>
+                    </Condition>
+                  </FilterItem>
+                </FilterItems>
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement> SELECT NON EMPTY { [Measures].[Object Count], [Measures].[Raw Score] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Container View].[Containers].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@ContainerViewContainers, CONSTRAINED) ) ON COLUMNS FROM [Risk Manager Cube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>ContainerViewContainers</Name>
+                  <DefaultValues />
+                  <Caption>Containers</Caption>
+                  <HierarchyUniqueName>[Container View].[Containers]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Container View].[Containers].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Container View].[Containers].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Container View].[Containers].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Container View].[Containers].ALLMEMBERS ON ROWS FROM [Risk Manager Cube]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Containers">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Container View].[Containers]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ObjectCount">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Object Count]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RawScore">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Raw Score]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="ContainerViewContainers">
+      <DataType>String</DataType>
+      <Prompt>Container</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ContainerViewContainers</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="RiskManager">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0c8082dd-0f4d-45de-b39b-cf2fe3778181</rd:ReportID>
+</Report>
