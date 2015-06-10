@@ -2,13 +2,13 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix1">
+      <Tablix Name="Tablix5">
         <TablixCorner>
           <TablixCornerRows>
             <TablixCornerRow>
               <TablixCornerCell>
                 <CellContents>
-                  <Textbox Name="Textbox6">
+                  <Textbox Name="Textbox33">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -16,18 +16,23 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Containers</Value>
-                            <Style />
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox6</rd:DefaultName>
+                    <rd:DefaultName>Textbox33</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4e387e</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -44,6 +49,12 @@
             <TablixColumn>
               <Width>1in</Width>
             </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
@@ -51,21 +62,96 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ObjectCount">
+                    <Textbox Name="Object_Count">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ObjectCount.Value)</Value>
-                              <Style />
+                              <Value>=Sum(Fields!Object_Count.Value)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0;(#,0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ObjectCount</rd:DefaultName>
+                      <rd:DefaultName>Object_Count</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Raw_Score">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!Raw_Score.Value)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Raw_Score</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="AverageScore">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!AverageScore.Value)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0.00;(#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>AverageScore</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -94,7 +180,7 @@
               <TablixHeader>
                 <Size>0.25in</Size>
                 <CellContents>
-                  <Textbox Name="Textbox3">
+                  <Textbox Name="Textbox31">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -102,18 +188,106 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Object Count</Value>
-                            <Style />
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Right</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox3</rd:DefaultName>
+                    <rd:DefaultName>Textbox31</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4e387e</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox40">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Raw Score</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Format>#,0.00;(#,0.00)</Format>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Right</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox40</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#4e387e</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox1">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Average Score</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Right</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox1</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#4e387e</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -130,8 +304,9 @@
             <TablixMember>
               <Group Name="Containers">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!Containers.Value</GroupExpression>
+                  <GroupExpression>=Fields!Containers.UniqueName</GroupExpression>
                 </GroupExpressions>
+                <Parent>=Fields!Containers.ParentUniqueName</Parent>
               </Group>
               <SortExpressions>
                 <SortExpression>
@@ -139,7 +314,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1in</Size>
+                <Size>3.5in</Size>
                 <CellContents>
                   <Textbox Name="Containers">
                     <CanGrow>true</CanGrow>
@@ -149,7 +324,9 @@
                         <TextRuns>
                           <TextRun>
                             <Value>=Fields!Containers.Value</Value>
-                            <Style />
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -161,7 +338,7 @@
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
-                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingLeft>=Cstr(Fields!Containers.LevelNumber * 10) &amp; “pt”</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
                       <PaddingBottom>2pt</PaddingBottom>
@@ -169,28 +346,291 @@
                   </Textbox>
                 </CellContents>
               </TablixHeader>
+              <Visibility>
+                <Hidden>true</Hidden>
+                <ToggleItem>Containers</ToggleItem>
+              </Visibility>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>ReportData</DataSetName>
-        <Top>0.06944in</Top>
-        <Left>0.10292in</Left>
+        <DataSetName>RiskData</DataSetName>
+        <Top>1.51167in</Top>
         <Height>0.5in</Height>
-        <Width>2in</Width>
+        <Width>6.5in</Width>
         <Style>
           <Border>
+            <Color>LightGrey</Color>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Chart Name="Chart1">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart1_CategoryGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Containers.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Containers.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!Containers.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Average Score</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="Raw_Score">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!AverageScore.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                  <Style>
+                    <Color>MediumPurple</Color>
+                  </Style>
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>First Level Containers</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <MaxFontSize>8pt</MaxFontSize>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartValueAxes>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <Palette>BrightPastel</Palette>
+        <ChartBorderSkin>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>No Data Available</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>RiskData</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Containers.LevelNumber</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>=2</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
+        <Top>0.04167in</Top>
+        <Left>0.12375in</Left>
+        <Height>1.38542in</Height>
+        <Width>6.125in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+        </Style>
+      </Chart>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>2.05208in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.51042in</Width>
   <Page>
     <PageHeader>
-      <Height>1.04042in</Height>
+      <Height>1.0925in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -205,38 +645,18 @@
             </Border>
           </Style>
         </Image>
-        <Textbox Name="Textbox1">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Report: " &amp; Globals!ReportName &amp; Environment.NewLine &amp; "Runtime: " &amp; Format(Now(),"MM/dd/yyyy HH:mm:ss") &amp; Environment.NewLine &amp; "Server: " &amp; Globals!ReportServerUrl</Value>
-                  <Style>
-                    <Color>Purple</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.43625in</Top>
-          <Left>1.42361in</Left>
-          <Height>0.25in</Height>
-          <Width>4.97097in</Width>
+        <Line Name="Line2">
+          <Top>1.06125in</Top>
+          <Left>0.12375in</Left>
+          <Height>0in</Height>
+          <Width>6.27083in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
-              <Style>None</Style>
+              <Style>Solid</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
-        </Textbox>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -245,7 +665,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.00917in</Height>
+      <Height>0.54042in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -258,7 +678,9 @@
                 <TextRun>
                   <Value>="Page " &amp; Globals!OverallPageNumber &amp; " of " &amp; Globals!OverallTotalPages</Value>
                   <Style>
-                    <Color>Purple</Color>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#4e387e</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -268,9 +690,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>0.2175in</Top>
+          <Top>0.125in</Top>
           <Left>1.44271in</Left>
-          <Height>0.25in</Height>
+          <Height>0.17708in</Height>
           <Width>3.61458in</Width>
           <Style>
             <Border>
@@ -282,6 +704,90 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Textbox Name="Textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals.ReportName</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#4e387e</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.32514in</Top>
+          <Left>0.01042in</Left>
+          <Height>0.18403in</Height>
+          <Width>2.28125in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Format(Globals.ExecutionTime, "MM/dd/yyyy HH:mm")</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#4e387e</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.32514in</Top>
+          <Left>4.22917in</Left>
+          <Height>0.18403in</Height>
+          <Width>2.28125in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>0.125in</Top>
+          <Left>0.12375in</Left>
+          <Height>0in</Height>
+          <Width>6.27083in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -304,10 +810,17 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ContainerViewContainers">
+    <DataSet Name="ContainerViews">
       <Query>
         <DataSourceName>RiskManager</DataSourceName>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Container View].[Containers].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Container View].[Containers].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Container View].[Containers].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Container View].[Containers].ALLMEMBERS ON ROWS FROM [Risk Manager Cube]</CommandText>
+        <CommandText>SELECT  { } ON COLUMNS,
+{ 
+(
+[Container View].[View Key].[View Key].ALLMEMBERS * 
+[Container View].[View Name].[View Name].ALLMEMBERS 
+) 
+} ON ROWS 
+FROM [Risk Manager Cube] </CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -316,28 +829,24 @@
               <Select>
                 <Items>
                   <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterCaption</MeasureName>
-                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    <ID xsi:type="Level">
+                      <DimensionName>Container View</DimensionName>
+                      <HierarchyName>View Key</HierarchyName>
+                      <HierarchyUniqueName>[Container View].[View Key]</HierarchyUniqueName>
+                      <LevelName>View Key</LevelName>
+                      <UniqueName>[Container View].[View Key].[View Key]</UniqueName>
                     </ID>
-                    <ItemCaption>ParameterCaption</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
+                    <ItemCaption>View Key</ItemCaption>
                   </Item>
                   <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterValue</MeasureName>
-                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    <ID xsi:type="Level">
+                      <DimensionName>Container View</DimensionName>
+                      <HierarchyName>View Name</HierarchyName>
+                      <HierarchyUniqueName>[Container View].[View Name]</HierarchyUniqueName>
+                      <LevelName>View Name</LevelName>
+                      <UniqueName>[Container View].[View Name].[View Name]</UniqueName>
                     </ID>
-                    <ItemCaption>ParameterValue</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterLevel</MeasureName>
-                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterLevel</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
+                    <ItemCaption>View Name</ItemCaption>
                   </Item>
                 </Items>
               </Select>
@@ -350,42 +859,40 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Container View].[Containers].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Container View].[Containers].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Container View].[Containers].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Container View].[Containers].ALLMEMBERS ON ROWS FROM [Risk Manager Cube]</Statement>
+              <Statement>SELECT  { } ON COLUMNS,
+{ 
+(
+[Container View].[View Key].[View Key].ALLMEMBERS * 
+[Container View].[View Name].[View Name].ALLMEMBERS 
+) 
+} ON ROWS 
+FROM [Risk Manager Cube] 
+</Statement>
               <ParameterDefinitions />
             </Query>
           </QueryDefinition>
         </rd:DesignerState>
-        <rd:AutoGenerated>true</rd:AutoGenerated>
-        <rd:Hidden>true</rd:Hidden>
       </Query>
       <Fields>
-        <Field Name="ParameterCaption">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="View_Key">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Container View].[View Key].[View Key]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ParameterValue">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterLevel">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterCaptionIndented">
-          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+        <Field Name="View_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Container View].[View Name].[View Name]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="ReportData">
+    <DataSet Name="RiskData">
       <Query>
         <DataSourceName>RiskManager</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="ContainerViewContainers">
-            <Value>=Parameters!ContainerViewContainers.Value</Value>
+          <QueryParameter Name="ContainerViewViewName">
+            <Value>="[Container View].[View Name].[" &amp; Parameters!ContainerView.Value &amp; "]"</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText> SELECT NON EMPTY { [Measures].[Object Count], [Measures].[Raw Score] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Container View].[Containers].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@ContainerViewContainers, CONSTRAINED) ) ON COLUMNS FROM [Risk Manager Cube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText> SELECT NON EMPTY { [Measures].[Object Count], [Measures].[Raw Score], [Measures].[AverageScore] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Container View].[Containers].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@ContainerViewViewName, CONSTRAINED) ) ON COLUMNS FROM [Risk Manager Cube]) WHERE ( IIF( STRTOSET(@ContainerViewViewName, CONSTRAINED).Count = 1, STRTOSET(@ContainerViewViewName, CONSTRAINED), [Container View].[View Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -436,13 +943,29 @@
                     <FormattedValue>true</FormattedValue>
                     <FormatString>true</FormatString>
                   </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>AverageScore</MeasureName>
+                      <UniqueName>[Measures].[AverageScore]</UniqueName>
+                    </ID>
+                    <ItemCaption>AverageScore</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
                 </Items>
               </Select>
               <From>Risk Manager Cube</From>
               <Filter>
                 <FilterItems>
                   <FilterItem>
-                    <HierarchyUniqueName>[Container View].[Containers]</HierarchyUniqueName>
+                    <HierarchyUniqueName>[Container View].[View Name]</HierarchyUniqueName>
                     <Condition xsi:type="EqualTo">
                       <Members />
                       <Parametrized>true</Parametrized>
@@ -455,15 +978,15 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement> SELECT NON EMPTY { [Measures].[Object Count], [Measures].[Raw Score] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Container View].[Containers].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@ContainerViewContainers, CONSTRAINED) ) ON COLUMNS FROM [Risk Manager Cube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement> SELECT NON EMPTY { [Measures].[Object Count], [Measures].[Raw Score], [Measures].[AverageScore] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Container View].[Containers].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@ContainerViewViewName, CONSTRAINED) ) ON COLUMNS FROM [Risk Manager Cube]) WHERE ( IIF( STRTOSET(@ContainerViewViewName, CONSTRAINED).Count = 1, STRTOSET(@ContainerViewViewName, CONSTRAINED), [Container View].[View Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
-                  <Name>ContainerViewContainers</Name>
+                  <Name>ContainerViewViewName</Name>
                   <DefaultValues />
-                  <Caption>Containers</Caption>
-                  <HierarchyUniqueName>[Container View].[Containers]</HierarchyUniqueName>
+                  <Caption>View Name</Caption>
+                  <HierarchyUniqueName>[Container View].[View Name]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Container View].[Containers].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Container View].[Containers].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Container View].[Containers].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Container View].[Containers].ALLMEMBERS ON ROWS FROM [Risk Manager Cube]</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Container View].[View Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Container View].[View Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Container View].[View Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Container View].[View Name].ALLMEMBERS ON ROWS FROM [Risk Manager Cube]</Statement>
                     <ParameterizedStatement>
                       <ReferencedParameters />
                     </ParameterizedStatement>
@@ -480,29 +1003,32 @@
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Container View].[Containers]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ObjectCount">
+        <Field Name="Object_Count">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Object Count]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="RawScore">
+        <Field Name="Raw_Score">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Raw Score]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AverageScore">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[AverageScore]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="ContainerViewContainers">
+    <ReportParameter Name="ContainerView">
       <DataType>String</DataType>
-      <Prompt>Container</Prompt>
+      <Prompt>Select Container View</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>ContainerViewContainers</DataSetName>
-          <ValueField>ParameterValue</ValueField>
-          <LabelField>ParameterCaptionIndented</LabelField>
+          <DataSetName>ContainerViews</DataSetName>
+          <ValueField>View_Name</ValueField>
+          <LabelField>View_Name</LabelField>
         </DataSetReference>
       </ValidValues>
-      <MultiValue>true</MultiValue>
     </ReportParameter>
   </ReportParameters>
   <EmbeddedImages>
