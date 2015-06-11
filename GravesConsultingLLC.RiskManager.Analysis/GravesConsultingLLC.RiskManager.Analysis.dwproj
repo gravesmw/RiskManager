@@ -31,6 +31,10 @@
       <Name>Defect.dim</Name>
       <FullPath>Defect.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Grade Scale.dim</Name>
+      <FullPath>Grade Scale.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
