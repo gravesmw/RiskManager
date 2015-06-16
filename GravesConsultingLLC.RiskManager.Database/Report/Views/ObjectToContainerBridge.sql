@@ -1,4 +1,4 @@
-﻿CREATE VIEW [rEPORT].[ObjectToContainerBridge]
+﻿CREATE VIEW [Report].[ObjectToContainerBridge]
 AS
 SELECT	ObjectID AS ObjectKey,
 		ContainerViewID AS ContainerViewKey

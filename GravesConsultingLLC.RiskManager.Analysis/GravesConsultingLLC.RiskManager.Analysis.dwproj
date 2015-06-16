@@ -28,12 +28,16 @@
       <FullPath>Object.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Defect.dim</Name>
-      <FullPath>Defect.dim</FullPath>
+      <Name>Object Type.dim</Name>
+      <FullPath>Object Type.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Grade Scale.dim</Name>
-      <FullPath>Grade Scale.dim</FullPath>
+      <Name>Defect Group.dim</Name>
+      <FullPath>Defect Group.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Defect.dim</Name>
+      <FullPath>Defect.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
