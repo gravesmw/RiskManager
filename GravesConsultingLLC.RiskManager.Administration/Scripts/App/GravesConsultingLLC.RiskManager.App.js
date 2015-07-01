@@ -1,11 +1,26 @@
-﻿var app = angular.module('GravesConsultingLLC.RiskManager', ['ngRoute']);
+﻿'use strict';
+var app = angular.module('GravesConsultingLLC.RiskManager', [
+    'ngRoute',
+    'angularTreeview',
+    'GravesConsultingLLC.RiskManager.Controller',
+    'GravesConsultingLLC.RiskManager.Controller.Service'
+]);
 
-//app.config(['$routeProvider', function ($routeProvider) {
+app.config(['$routeProvider', function ($routeProvider) {
 
-//    $routeProvider.when('/', {
-//        controller: 'customersController',
-//        templateUrl: '/app/views/customers.html'
-//    })
-//    .otherwise({ redirectTo: '/' });
+    $routeProvider.when('/ContainerView', {
+        controller: 'ContainerViewController',
+        controllerAs: 'vmContainerViewController',
+        templateUrl: '/Templates/ContainerView.html'
+    }).when('/DefectGroup', {
+        controller: 'DefectGroupController',
+        controllerAs: 'vmDefectGroupController',
+        templateUrl: '/Templates/DefectGroup.html'
+    }).when('/ObjectType', {
+        controller: 'ObjectTypeController',
+        controllerAs: 'vmObjectTypeController',
+        templateUrl: '/Templates/ObjectType.html'
+    })
+    .otherwise({ redirectTo: '/' });
 
-//}]);
+}]);

@@ -22,7 +22,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Administration", "Index", "Home", new { area = "" }, null)</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administration <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/ContainerView">Container Views</a></li>
+                            <li><a href="#/ObjectType">Object Types</a></li>
+                            <li><a href="#/DefectGroup">Defect Groups</a></li>
+                        </ul>
+                    </li>
                     <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                 </ul>
             </div>

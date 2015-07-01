@@ -21,15 +21,17 @@ namespace GravesConsultingLLC.RiskManager.Administration
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/angular-ui-tree.min.css"));
+                    "~/Content/bootstrap.min.css",  
+                    "~/Content/site.css",
+                      "~/Content/angular.treeview.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                       "~/Scripts/angular.min.js",
                       "~/Scripts/angular-route.min.js",
-                      "~/Scripts/angular-ui-tree.min.js",
-                      "~/Scripts/App/GravesConsultingLLC.RiskManager.App.js"));
+                      "~/Scripts/angular.treeview.min.js",
+                      "~/Scripts/App/GravesConsultingLLC.RiskManager.App.js",
+                      "~/Scripts/App/GravesConsultingLLC.RiskManager.Controller.js",
+                      "~/Scripts/App/GravesConsultingLLC.RiskManager.Controller.Service.js"));
         }
     }
 }
