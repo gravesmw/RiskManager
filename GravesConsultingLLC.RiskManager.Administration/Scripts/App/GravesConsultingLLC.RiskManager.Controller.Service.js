@@ -16,5 +16,13 @@ app.factory("containerViewFactory", ['$http', function ($http) {
         return $http.get(urlBase + '/' + viewID);
     };
 
+    containerViewFactory.createContainer = function (viewID, newContainer) {
+        return $http.post(urlBase + '/' + viewID, newContainer);
+    };
+
+    containerViewFactory.deleteContainer = function (viewID, containerViewID) {
+        return $http.delete(urlBase + '/' + viewID + '/container/' + containerViewID);
+    };
+
     return containerViewFactory;
 }]);

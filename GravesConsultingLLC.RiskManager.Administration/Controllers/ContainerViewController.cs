@@ -31,5 +31,28 @@ namespace GravesConsultingLLC.RiskManager.Administration.Controllers
                 ContainerView.GetHierarchy(ViewID, _Repository)
             );
         }
+
+        [Route("{viewid:int}")]
+        [HttpPost]
+        public IHttpActionResult AddContainerToView(int ViewID, Container NewContainer)
+        {
+            NewContainer.Create(_Repository);
+
+            return Created<Container>(
+                Request.RequestUri + "/" + NewContainer.ContainerID.ToString(),
+                NewContainer
+            );
+        }
+
+        [Route("{viewid:int}/container/{containerviewid:int}")]
+        [HttpDelete]
+        public IHttpActionResult DeleteContainerFromView(int ViewID, int ContainerViewID)
+        {
+            ContainerViewHierarchy.DeleteContainerViewEntry(
+                   ContainerViewID, _Repository
+           );
+            
+            return Ok();
+        }
     }
 }

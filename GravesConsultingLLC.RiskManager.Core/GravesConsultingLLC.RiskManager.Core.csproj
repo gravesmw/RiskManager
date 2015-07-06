@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Model\Container.cs" />
     <Compile Include="Model\ContainerView.cs" />
     <Compile Include="Model\ContainerViewHierarchy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

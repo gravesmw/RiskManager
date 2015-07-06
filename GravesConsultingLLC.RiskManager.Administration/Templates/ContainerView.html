@@ -1,13 +1,11 @@
 ﻿<div class="container">
     
      <div class="col-md-12">
-        <p>Selected item is : {{containerView.Name}} </p>
-        <select class="form-control"
-                ng-model="containerView"
-                ng-options="view.Name for view in vmContainerViewController.containerViews"
-                ng-change="vmContainerViewController.setContainers(containerView)">
-
-        </select>
+        <p>Selected item is : {{selectedContainerView.Name}} </p>
+         <select class="form-control"
+                 ng-model="selectedContainerView"
+                 ng-options="view.Name for view in vmContainerViewController.containerViews"
+                 ng-change="vmContainerViewController.setContainers(selectedContainerView)"></select>
     </div>
     
     <div class="col-md-8"
@@ -20,8 +18,8 @@
     </div>
 
     <div class="col-md-4 top-buffer">
-        <button class="btn btn-default" type="submit">Add Container</button><br/>
-        <button class="btn btn-default" type="submit">Delete Container</button>
+        <button class="btn btn-default" type="submit" ng-click="vmContainerViewController.createContainerView()">Add Container</button><br/>
+        <button class="btn btn-default" type="submit" ng-click="vmContainerViewController.deleteContainerView()">Delete Container</button>
     </div>
     
     </div>

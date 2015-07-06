@@ -1,7 +1,10 @@
 ﻿'use strict';
 var app = angular.module('GravesConsultingLLC.RiskManager', [
     'ngRoute',
+    'ui.bootstrap',
+    'cgPrompt',
     'angularTreeview',
+    'angular-loading-bar', 
     'GravesConsultingLLC.RiskManager.Controller',
     'GravesConsultingLLC.RiskManager.Controller.Service'
 ]);
