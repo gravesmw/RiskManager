@@ -9,7 +9,7 @@ namespace GravesConsultingLLC.RiskManager.Core.Model
 {
     public class Container
     {
-        public int? ContainerID { get; set; }
+        public int? ContainerViewID { get; set; } 
         public string Name { get; set; }
         public int? ViewID { get; set; }
         public int? ParentContainerViewID { get; set; }
@@ -24,10 +24,10 @@ namespace GravesConsultingLLC.RiskManager.Core.Model
                 { "@ParentContainerViewID", this.ParentContainerViewID } 
             };
 
-            this.ContainerID =
-                SqlRepository.Put<int>(Procedure, Parameters, "@ContainerID");
+            this.ContainerViewID =
+                SqlRepository.Put<int>(Procedure, Parameters, "@ContainerViewID");
 
-            return (int)this.ContainerID;
+            return (int)this.ContainerViewID;
         }
     }
 }

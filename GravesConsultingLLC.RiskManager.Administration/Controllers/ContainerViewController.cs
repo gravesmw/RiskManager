@@ -39,7 +39,7 @@ namespace GravesConsultingLLC.RiskManager.Administration.Controllers
             NewContainer.Create(_Repository);
 
             return Created<Container>(
-                Request.RequestUri + "/" + NewContainer.ContainerID.ToString(),
+                Request.RequestUri + "/" + NewContainer.ContainerViewID.ToString(),
                 NewContainer
             );
         }

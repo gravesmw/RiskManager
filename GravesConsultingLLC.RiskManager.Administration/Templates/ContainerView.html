@@ -1,25 +1,31 @@
-﻿<div class="container">
-    
-     <div class="col-md-12">
-        <p>Selected item is : {{selectedContainerView.Name}} </p>
-         <select class="form-control"
-                 ng-model="selectedContainerView"
-                 ng-options="view.Name for view in vmContainerViewController.containerViews"
-                 ng-change="vmContainerViewController.setContainers(selectedContainerView)"></select>
+﻿    
+    <div class="row top-buffer">
+        <div class="col-md-4">
+            <select class="form-control"
+                    ng-model="selectedContainerView"
+                    ng-options="view.Name for view in vmContainerViewController.containerViews"
+                    ng-change="vmContainerViewController.setContainers(selectedContainerView)">
+                <option value="" ng-disabled="!!selectedContainerView">Select View</option>
+            </select>
+        </div>
+        <div class="col-md-8">
+            <button class="btn btn-default" type="submit">Add Container View</button><br />
+        </div>
     </div>
     
-    <div class="col-md-8"
-            data-angular-treeview="true"
-            data-tree-id="containerTree"
-            data-tree-model="vmContainerViewController.containers"
-            data-node-id="ContainerViewID"
-            data-node-label="Name"
-            data-node-children="Children">
+    <div class="row top-buffer">
+        <div class="col-md-4"
+             data-angular-treeview="true"
+             data-tree-id="containerTree"
+             data-tree-model="vmContainerViewController.containers"
+             data-node-id="ContainerViewID"
+             data-node-label="Name"
+             data-node-children="Children">
+        </div>
+    
+        <div class="col-md-8">
+            <button class="btn btn-default" type="submit" ng-click="vmContainerViewController.createContainerView()">Add Container</button><br />
+            <button class="btn btn-default" type="submit" ng-click="vmContainerViewController.deleteContainerView()">Delete Container</button>
+        </div>
     </div>
 
-    <div class="col-md-4 top-buffer">
-        <button class="btn btn-default" type="submit" ng-click="vmContainerViewController.createContainerView()">Add Container</button><br/>
-        <button class="btn btn-default" type="submit" ng-click="vmContainerViewController.deleteContainerView()">Delete Container</button>
-    </div>
-    
-    </div>

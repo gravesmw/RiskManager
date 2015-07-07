@@ -25,10 +25,15 @@ app.controller('ContainerViewController', ['$scope', 'containerViewFactory', 'pr
 
     vm.setContainers = function (containerView) {
         vm.selectedContainerView = containerView;
-
+    
         containerViewFactory.getContainerViewHierarchy(containerView.ViewID)
             .success(function (containerView) {
-                vm.containers = containerView;
+                if (containerView.length == 1 && containerView[0] == null) {
+                    vm.containers.length = 0; 
+                }
+                else {
+                    vm.containers = containerView;
+                }
             })
             .error(function (error) {
                 console.log(error.message);
@@ -57,7 +62,19 @@ app.controller('ContainerViewController', ['$scope', 'containerViewFactory', 'pr
 
             containerViewFactory.createContainer(newContainer.ViewID, newContainer)
                 .success(function (containerView) {
-                    $scope.containerTree.currentNode.Children.push(containerView);
+                    
+                    if (containerView.Children == undefined) {
+                        var Children = [];
+                        containerView["Children"] = Children;
+                    }
+
+                    //if not currentNode it is root
+                    if ($scope.containerTree.currentNode) {
+                        $scope.containerTree.currentNode.Children.push(containerView);
+                    }
+                    else {
+                        vm.containers.push(containerView);
+                    }
                 })
                 .error(function (error) {
                     console.log(error.message);
@@ -73,6 +90,7 @@ app.controller('ContainerViewController', ['$scope', 'containerViewFactory', 'pr
         var viewID = vm.selectedContainerView.ViewID;
         var containerViewID = vm.selectedContainer.ContainerViewID;
 
+        
         containerViewFactory.deleteContainer(viewID, containerViewID)
             .success(function () {
                 if (vm.containers.selected == "selected") {
