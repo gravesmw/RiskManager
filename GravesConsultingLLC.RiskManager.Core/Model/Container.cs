@@ -9,25 +9,19 @@ namespace GravesConsultingLLC.RiskManager.Core.Model
 {
     public class Container
     {
-        public int? ContainerViewID { get; set; } 
+        public int ContainerID { get; set; }
         public string Name { get; set; }
-        public int? ViewID { get; set; }
-        public int? ParentContainerViewID { get; set; }
 
-        public int Create(IRepository SqlRepository)
+        public static IEnumerable<string> GetPossibleContainers(int ViewID, IRepository SqlRepository)
         {
-            string Procedure = "Report.spCreateContainer";
+            string Procedure = "Report.spGetPossibleContainers";
 
             Dictionary<string, object> Parameters = new Dictionary<string, object>(){
-                { "@Name", this.Name } ,
-                { "@ViewID", this.ViewID } ,
-                { "@ParentContainerViewID", this.ParentContainerViewID } 
+                { "@ViewID", ViewID}
             };
 
-            this.ContainerViewID =
-                SqlRepository.Put<int>(Procedure, Parameters, "@ContainerViewID");
-
-            return (int)this.ContainerViewID;
+            return
+                SqlRepository.Get<string>(Procedure, Parameters, true);
         }
     }
 }

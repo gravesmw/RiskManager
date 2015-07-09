@@ -34,11 +34,11 @@ namespace GravesConsultingLLC.RiskManager.Administration.Controllers
 
         [Route("{viewid:int}")]
         [HttpPost]
-        public IHttpActionResult AddContainerToView(int ViewID, Container NewContainer)
+        public IHttpActionResult AddContainerToView(int ViewID, ContainerViewEntry NewContainer)
         {
             NewContainer.Create(_Repository);
 
-            return Created<Container>(
+            return Created<ContainerViewEntry>(
                 Request.RequestUri + "/" + NewContainer.ContainerViewID.ToString(),
                 NewContainer
             );

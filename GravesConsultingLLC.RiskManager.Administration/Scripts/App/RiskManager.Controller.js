@@ -6,9 +6,10 @@ var app = angular.module('RiskManager.Controller', [
 app.controller('ContainerViewController', [
     '$scope',
     'containerViewFactory',
+    'containerFactory',
     'prompt',
     'commonFuncFactory',
-    function ($scope, containerViewFactory, prompt, commonFuncFactory) {
+    function ($scope, containerViewFactory, containerFactory, prompt, commonFuncFactory) {
 
     getContainerViews();
     
@@ -69,6 +70,7 @@ app.controller('ContainerViewController', [
                         $scope.containerTree.currentNode.Children.push(containerView);
                     }
                     else {
+                        //Verify model array exists before push
                         if ($scope.viewContainers == undefined) {
                             $scope.viewContainers = [];
                         }
@@ -79,6 +81,59 @@ app.controller('ContainerViewController', [
                     console.log(error.message);
                 });
         })
+    }
+
+    $scope.addExistingContainerView = function(){
+        var possibleContainers = [];
+
+        containerFactory.getPossibleContainers($scope.selectedView.ViewID)
+            .success(function (containers) {
+                possibleContainers = containers;
+                prompt({
+                    title: 'Add Existing Container to View',
+                    input: true,
+                    values: possibleContainers
+                }).then(function (name) {
+                    //Create new container instance based on selected values
+                    var ParentViewID = null;
+                    if ($scope.containerTree.currentNode) {
+                        ParentViewID = $scope.containerTree.currentNode.ContainerViewID
+                    }
+
+                    var newContainer = {
+                        Name: name,
+                        ViewID: $scope.selectedView.ViewID,
+                        ParentContainerViewID: ParentViewID
+                    };
+
+                    containerViewFactory.createContainer(newContainer.ViewID, newContainer)
+                        .success(function (containerView) {
+                            //Create children array if it does not exist. This indicates the root
+                            //node is being created
+                            if (containerView.Children == undefined) {
+                                var Children = [];
+                                containerView["Children"] = Children;
+                            }
+                            //if not currentNode it is root
+                            if ($scope.containerTree.currentNode) {
+                                $scope.containerTree.currentNode.Children.push(containerView);
+                            }
+                            else {
+                                //Verify model array exists before push
+                                if ($scope.viewContainers == undefined) {
+                                    $scope.viewContainers = [];
+                                }
+                                $scope.viewContainers.push(containerView);
+                            }
+                        })
+                        .error(function (error) {
+                            console.log(error.message);
+                        });
+                })
+            })
+            .error(function (error) {
+                console.log(error.message);
+            });
     }
 
     //delete container button action

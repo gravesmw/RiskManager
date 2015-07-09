@@ -28,6 +28,20 @@ app.factory("containerViewFactory", ['$http', function ($http) {
     return containerViewFactory;
 }]);
 
+//Service that manages container view server side action
+app.factory("containerFactory", ['$http', function ($http) {
+
+    var urlBase = '/Container';
+    var containerFactory = {};
+
+    containerFactory.getPossibleContainers = function (viewID) {
+        return $http.get(urlBase + '/' + viewID);
+    };
+
+    return containerFactory;
+}]);
+
+
 //Service containg shared functions
 app.factory("commonFuncFactory", [ function() {
     
