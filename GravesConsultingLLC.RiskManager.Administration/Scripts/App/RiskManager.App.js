@@ -1,12 +1,12 @@
 ﻿'use strict';
-var app = angular.module('GravesConsultingLLC.RiskManager', [
+var app = angular.module('RiskManager', [
     'ngRoute',
     'ui.bootstrap',
     'cgPrompt',
     'angularTreeview',
     'angular-loading-bar', 
-    'GravesConsultingLLC.RiskManager.Controller',
-    'GravesConsultingLLC.RiskManager.Controller.Service'
+    'RiskManager.Controller',
+    'RiskManager.Controller.Service'
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {

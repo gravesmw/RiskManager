@@ -33,9 +33,9 @@ namespace GravesConsultingLLC.RiskManager.Administration
                       "~/Scripts/angular.treeview.min.js",
                       "~/Scripts/loading-bar.min.js",
                       "~/Scripts/angular-prompt.min.js",
-                      "~/Scripts/App/GravesConsultingLLC.RiskManager.App.js",
-                      "~/Scripts/App/GravesConsultingLLC.RiskManager.Controller.js",
-                      "~/Scripts/App/GravesConsultingLLC.RiskManager.Controller.Service.js"
+                      "~/Scripts/App/RiskManager.App.js",
+                      "~/Scripts/App/RiskManager.Controller.js",
+                      "~/Scripts/App/RiskManager.Controller.Service.js"
                       ));
         }
     }

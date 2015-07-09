@@ -1,8 +1,9 @@
 ﻿'use strict';
-var app = angular.module('GravesConsultingLLC.RiskManager.Controller.Service', [
+var app = angular.module('RiskManager.Controller.Service', [
     
 ]);
 
+//Service that manages container view server side action
 app.factory("containerViewFactory", ['$http', function ($http) {
 
     var urlBase = '/ContainerView';
@@ -25,4 +26,25 @@ app.factory("containerViewFactory", ['$http', function ($http) {
     };
 
     return containerViewFactory;
+}]);
+
+//Service containg shared functions
+app.factory("commonFuncFactory", [ function() {
+    
+    var commonFuncFactory = {};
+
+    commonFuncFactory.removeNodeFromTree = function (parent, node, index) {
+        if (node.selected == "selected") {
+            parent.Children.splice(index, 1);
+        }
+        else {
+            if (node.Children.length > 0) {
+                for (var i = 0; i < node.Children.length; i++) {
+                    commonFuncFactory.removeNodeFromTree(node, node.Children[i], i);
+                }
+            }
+        }
+    }
+    
+    return commonFuncFactory;
 }]);

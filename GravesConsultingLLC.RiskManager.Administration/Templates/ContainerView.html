@@ -2,10 +2,10 @@
     <div class="row top-buffer">
         <div class="col-md-4">
             <select class="form-control"
-                    ng-model="selectedContainerView"
-                    ng-options="view.Name for view in vmContainerViewController.containerViews"
-                    ng-change="vmContainerViewController.setContainers(selectedContainerView)">
-                <option value="" ng-disabled="!!selectedContainerView">Select View</option>
+                    ng-model="selectedView"
+                    ng-options="view.Name for view in containerViews track by view.ViewID"
+                    ng-change="getContainerViewHierarchy()">
+                <option value="" ng-disabled="!!containerViews">Select View</option>
             </select>
         </div>
         <div class="col-md-8">
@@ -17,15 +17,19 @@
         <div class="col-md-4"
              data-angular-treeview="true"
              data-tree-id="containerTree"
-             data-tree-model="vmContainerViewController.containers"
+             data-tree-model="viewContainers"
              data-node-id="ContainerViewID"
              data-node-label="Name"
              data-node-children="Children">
         </div>
     
         <div class="col-md-8">
-            <button class="btn btn-default" type="submit" ng-click="vmContainerViewController.createContainerView()">Add Container</button><br />
-            <button class="btn btn-default" type="submit" ng-click="vmContainerViewController.deleteContainerView()">Delete Container</button>
+            <div class="btn-group-vertical">
+                <button class="btn btn-default" type="submit" ng-click="createContainerView()">Create New Container</button>
+                <button class="btn btn-default" type="submit">Add Existing Container</button>
+                <button class="btn btn-default" type="submit">Update Container</button>
+                <button class="btn btn-default" type="submit" ng-click="deleteContainerView()">Delete Container</button>
+            </div>
         </div>
     </div>
 
