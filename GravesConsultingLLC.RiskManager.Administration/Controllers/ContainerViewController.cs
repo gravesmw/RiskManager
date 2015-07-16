@@ -14,20 +14,11 @@ namespace GravesConsultingLLC.RiskManager.Administration.Controllers
     {
         public ContainerViewController(IRepository SqlRepository) : base(SqlRepository) { }
 
-        [Route("")]
-        [HttpGet]
-        public IHttpActionResult Get()
-        {
-            return Ok<IEnumerable<ContainerView>>(
-                ContainerView.Get(_Repository)
-            );
-        }
-
         [Route("{viewid:int}")]
         [HttpGet]
         public IHttpActionResult GetHierarchy(int ViewID)
         {
-            return Ok<List<ContainerViewHierarchy>>(
+            return Ok<List<Hierarchy>>(
                 ContainerView.GetHierarchy(ViewID, _Repository)
             );
         }
@@ -39,16 +30,25 @@ namespace GravesConsultingLLC.RiskManager.Administration.Controllers
             NewContainer.Create(_Repository);
 
             return Created<ContainerViewEntry>(
-                Request.RequestUri + "/" + NewContainer.ContainerViewID.ToString(),
+                Request.RequestUri + "/" + NewContainer.NodeID.ToString(),
                 NewContainer
             );
+        }
+
+        [Route("{viewid:int}")]
+        [HttpPut]
+        public IHttpActionResult UpdateContainerInView(int ViewID, ContainerViewEntry NewContainer)
+        {
+            NewContainer.Update(_Repository);
+
+            return Ok();
         }
 
         [Route("{viewid:int}/container/{containerviewid:int}")]
         [HttpDelete]
         public IHttpActionResult DeleteContainerFromView(int ViewID, int ContainerViewID)
         {
-            ContainerViewHierarchy.DeleteContainerViewEntry(
+            Hierarchy.DeleteContainerViewEntry(
                    ContainerViewID, _Repository
            );
             

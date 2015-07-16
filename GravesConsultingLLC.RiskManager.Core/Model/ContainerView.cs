@@ -21,9 +21,22 @@ namespace GravesConsultingLLC.RiskManager.Core.Model
                 SqlRepository.Get<ContainerView>(Procedure, null, true);
         }
 
-        public static List<ContainerViewHierarchy> GetHierarchy(int ViewID, IRepository SqlRepository)
+        public void Create(IRepository SqlRepository)
         {
-            List<ContainerViewHierarchy> ContainerViewHierarchies = new List<ContainerViewHierarchy>();
+            string Procedure =
+                "Report.spCreateView";
+
+            Dictionary<string, object> Parameters = new Dictionary<string, object>(){
+                { "@Name", this.Name }
+            };
+
+            this.ViewID = 
+                SqlRepository.Put<int>(Procedure, Parameters, "@ViewID");
+        }
+
+        public static List<Hierarchy> GetHierarchy(int ViewID, IRepository SqlRepository)
+        {
+            List<Hierarchy> ContainerViewHierarchies = new List<Hierarchy>();
 
             string Procedure = "Report.spGetContainerView";
 
@@ -31,23 +44,23 @@ namespace GravesConsultingLLC.RiskManager.Core.Model
               { "@ViewID", ViewID }
             };
 
-            IEnumerable<ContainerViewHierarchy> Hierarchy =
-                SqlRepository.Get<ContainerViewHierarchy>(Procedure, Parameters, true);
+            IEnumerable<Hierarchy> Hierarchy =
+                SqlRepository.Get<Hierarchy>(Procedure, Parameters, true);
 
             if (Hierarchy != null && Hierarchy.Count() > 0)
             {
-                foreach (ContainerViewHierarchy View in Hierarchy)
+                foreach (Hierarchy View in Hierarchy)
                 {
-                    if (View.ParentContainerViewID != null)
+                    if (View.ParentID != null)
                     {
-                        ContainerViewHierarchy Parent = Hierarchy.First<ContainerViewHierarchy>(x => x.ContainerViewID == View.ParentContainerViewID);
+                        Hierarchy Parent = Hierarchy.First<Hierarchy>(x => x.NodeID == View.ParentID);
                         Parent.Children.Add(View);
                     }
                 }
             }
 
             ContainerViewHierarchies.Add(
-                Hierarchy.FirstOrDefault(x => x.ParentContainerViewID == null)
+                Hierarchy.FirstOrDefault(x => x.ParentID == null)
             );
 
             return ContainerViewHierarchies;

@@ -1,8 +1,7 @@
 ﻿'use strict';
 var app = angular.module('RiskManager', [
     'ngRoute',
-    'ui.bootstrap',
-    'cgPrompt',
+    'angularModalService',
     'angularTreeview',
     'angular-loading-bar', 
     'RiskManager.Controller',

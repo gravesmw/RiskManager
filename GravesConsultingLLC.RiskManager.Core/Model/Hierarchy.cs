@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace GravesConsultingLLC.RiskManager.Core.Model
 {
-    public class ContainerViewHierarchy
+    public class Hierarchy
     {
-        public int ContainerViewID { get; set; }
+        public int NodeID { get; set; }
         public string Name { get; set; }
-        public int? ParentContainerViewID { get; set; }
-        public List<ContainerViewHierarchy> Children { get; set; }
+        public int? ParentID { get; set; }
+        public List<Hierarchy> Children { get; set; }
 
-        public ContainerViewHierarchy()
+        public Hierarchy()
         {
-            this.Children = new List<ContainerViewHierarchy>();
+            this.Children = new List<Hierarchy>();
         }
 
         public static void DeleteContainerViewEntry(int ContainerViewID, IRepository SqlRepository)

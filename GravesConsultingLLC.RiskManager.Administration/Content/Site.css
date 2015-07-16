@@ -24,3 +24,17 @@ textarea {
 .btn.pad {
     margin-top: 10px;
 }
+
+html,body{
+    height:100%;
+
+}
+
+.container {
+    height:100%;
+}
+
+.fd {
+  height: 400px;
+  overflow-y: auto;
+}

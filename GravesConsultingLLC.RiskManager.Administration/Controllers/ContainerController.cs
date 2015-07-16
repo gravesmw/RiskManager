@@ -18,7 +18,7 @@ namespace GravesConsultingLLC.RiskManager.Administration.Controllers
         [HttpGet]
         public IHttpActionResult GetPossibleContainers(int ViewID)
         {
-            return Ok<IEnumerable<string>>(
+            return Ok<IEnumerable<Container>>(
                 Container.GetPossibleContainers(ViewID, _Repository)
             );
         }

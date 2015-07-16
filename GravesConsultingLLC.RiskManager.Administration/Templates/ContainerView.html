@@ -3,33 +3,35 @@
         <div class="col-md-4">
             <select class="form-control"
                     ng-model="selectedView"
-                    ng-options="view.Name for view in containerViews track by view.ViewID"
+                    ng-options="view.name for view in containerViews track by view.viewID"
                     ng-change="getContainerViewHierarchy()">
                 <option value="" ng-disabled="!!containerViews">Select View</option>
             </select>
         </div>
         <div class="col-md-8">
-            <button class="btn btn-default" type="submit">Add Container View</button><br />
+            <button class="btn btn-default" type="submit" ng-click="createView()">Add Container View</button><br />
         </div>
     </div>
     
     <div class="row top-buffer">
-        <div class="col-md-4"
+        <div class="col-md-4 fd"
              data-angular-treeview="true"
              data-tree-id="containerTree"
              data-tree-model="viewContainers"
-             data-node-id="ContainerViewID"
-             data-node-label="Name"
-             data-node-children="Children">
+             data-node-id="viewId"
+             data-node-label="name"
+             data-node-children="children">
         </div>
     
         <div class="col-md-8">
             <div class="btn-group-vertical">
                 <button class="btn btn-default" type="submit" ng-click="createContainerView()">Create New Container</button>
                 <button class="btn btn-default" type="submit" ng-click="addExistingContainerView()">Add Existing Container</button>
-                <button class="btn btn-default" type="submit">Update Container</button>
+                <button class="btn btn-default" type="submit" ng-click="moveContainerView()">Move Container</button>
                 <button class="btn btn-default" type="submit" ng-click="deleteContainerView()">Delete Container</button>
             </div>
         </div>
     </div>
+
+
 

@@ -9,10 +9,10 @@ namespace GravesConsultingLLC.RiskManager.Core.Model
 {
     public class Container
     {
-        public int ContainerID { get; set; }
+        public int NodeID { get; set; }
         public string Name { get; set; }
 
-        public static IEnumerable<string> GetPossibleContainers(int ViewID, IRepository SqlRepository)
+        public static IEnumerable<Container> GetPossibleContainers(int ViewID, IRepository SqlRepository)
         {
             string Procedure = "Report.spGetPossibleContainers";
 
@@ -21,7 +21,7 @@ namespace GravesConsultingLLC.RiskManager.Core.Model
             };
 
             return
-                SqlRepository.Get<string>(Procedure, Parameters, true);
+                SqlRepository.Get<Container>(Procedure, Parameters, true);
         }
     }
 }
