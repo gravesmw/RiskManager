@@ -1,1 +1,22 @@
-﻿<h1>Defect Group</h1>
+﻿
+<div class="row top-buffer">
+    <div class="col-md-4 fd"
+         data-angular-treeview="true"
+         data-tree-id="groupTree"
+         data-tree-model="viewGroups"
+         data-node-id="nodeID"
+         data-node-label="name"
+         data-node-children="children">
+    </div>
+
+    <div class="col-md-8">
+        <div class="btn-group-vertical">
+            <button class="btn btn-default" type="submit" ng-click="createGroup()">Create New Group</button>
+            <button class="btn btn-default" type="submit" ng-click="moveGroup()">Move Group</button>
+            <button class="btn btn-default" type="submit" ng-click="deleteGroup()">Delete Group</button>
+        </div>
+    </div>
+</div>
+
+
+

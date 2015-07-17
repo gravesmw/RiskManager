@@ -58,6 +58,30 @@ app.factory("containerFactory", ['$http', function ($http) {
     return containerFactory;
 }]);
 
+//Service that manages view server side action
+app.factory("defectGroupFactory", ['$http', function ($http) {
+
+    var urlBase = '/DefectGroup';
+    var defectGroupFactory = {};
+
+    defectGroupFactory.getGroups = function () {
+        return $http.get(urlBase);
+    };
+
+    defectGroupFactory.moveGroup = function (newGroup) {
+        return $http.put(urlBase + '/' + newGroup.parentID, newGroup);
+    };
+
+    defectGroupFactory.createGroup = function (newGroup) {
+        return $http.post(urlBase, newGroup);
+    };
+
+    defectGroupFactory.deleteGroup = function (defectGroupID) {
+        return $http.delete(urlBase + '/' + defectGroupID);
+    };
+
+    return defectGroupFactory;
+}]);
 
 //Service containng shared functions
 app.factory("commonFuncFactory", [ function() {

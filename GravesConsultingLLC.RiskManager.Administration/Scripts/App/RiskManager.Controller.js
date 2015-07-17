@@ -1,13 +1,7 @@
 ﻿'use strict';
 var app = angular.module('RiskManager.Controller', []);
 
-app.controller('ContainerViewController', [
-    '$scope',
-    'viewFactory',
-    'containerViewFactory',
-    'containerFactory',
-    'ModalService',
-    'commonFuncFactory',
+app.controller('ContainerViewController', ['$scope', 'viewFactory', 'containerViewFactory', 'containerFactory', 'ModalService', 'commonFuncFactory',
     function ($scope, viewFactory, containerViewFactory, containerFactory, ModalService, commonFuncFactory) {
 
     getContainerViews();
@@ -306,8 +300,146 @@ app.controller('addExisting', ['$scope', '$element', 'title', 'nodes', 'close',
   }]);
 
 
-app.controller('DefectGroupController', ['$scope', function ($scope) {
+app.controller('DefectGroupController', ['$scope', 'defectGroupFactory', 'ModalService', 'commonFuncFactory',
+    function ($scope, defectGroupFactory, ModalService, commonFuncFactory) {
 
+    getGroups();
+
+    function getGroups() {
+        defectGroupFactory.getGroups()
+            .success(function (groups) {
+                $scope.viewGroups = groups;
+            })
+            .error(function (error) {
+                console.log(error.message);
+            });
+    }
+
+    $scope.createGroup = function () {
+        ModalService.showModal({
+            templateUrl: "/Templates/AddNodeModal.html",
+            controller: "addNode",
+            inputs: {
+                title: "Create Defect Group",
+                description: true
+            }
+        }).then(function (modal) {
+            modal.element.modal();
+            modal.close.then(function (result) {
+
+                var parentGroupID = null;
+                if ($scope.groupTree.currentNode && $scope.groupTree.currentNode.selected == 'selected') {
+                    parentGroupID = $scope.groupTree.currentNode.nodeID
+                }
+
+                var newGroup = {
+                    name: result.name,
+                    description: result.description,
+                    parentID : parentGroupID
+                };
+
+                defectGroupFactory.createGroup(newGroup)
+                    .success(function (group) {
+                        delete group['description']
+                        if ($scope.groupTree.currentNode) {
+                            $scope.groupTree.currentNode.children.push(group);
+                        }
+                        else {
+                            //Verify model array exists before push
+                            if ($scope.viewGroups == undefined) {
+                                $scope.viewGroups = [];
+                            }
+                            $scope.viewGroups.push(group);
+                        }
+                    })
+                .error(function (error) {
+                    console.log(error.message);
+                });
+            })
+        });
+    }
+
+    $scope.moveGroup = function () {
+
+        //Verify source node is selected
+        if (!commonFuncFactory.verifySelectedNode($scope.groupTree.currentNode)) {
+            return;
+        }
+
+        var possibleParents =
+             commonFuncFactory.getPossibleParents($scope.viewGroups, $scope.groupTree.currentNode.parentID);
+
+        ModalService.showModal({
+            templateUrl: "/Templates/MoveNodeModal.html",
+            controller: "moveNode",
+            inputs: {
+                title: "Change Group Parent",
+                possibleParents: possibleParents
+            }
+        }).then(function (modal) {
+            modal.element.modal();
+            modal.close.then(function (result) {
+
+                //Create instance of group to post to server with 
+                //new parent
+                var updatedGroup = {
+                    nodeID: $scope.groupTree.currentNode.nodeID,
+                    name: $scope.groupTree.currentNode.name,
+                    parentID: result.nodeID
+                }
+
+                defectGroupFactory.moveGroup(updatedGroup)
+                    .success(function () {
+
+                        //Remove node from source parent in tree
+                        commonFuncFactory.removeNodeFromTree(
+                            $scope.viewGroups,
+                            updatedGroup.nodeID);
+
+                        //Add children to container view instance if any
+                        if ($scope.groupTree.currentNode.children == undefined || $scope.groupTree.currentNode.children.length > 0) {
+                            var children = [];
+                            updatedGroup["children"] = $scope.groupTree.currentNode.children;
+                        }
+
+                        //Add node to target parent in tree
+                        commonFuncFactory.addNodeToTree(
+                            $scope.viewGroups,
+                            updatedGroup);
+                    })
+                    .error(function (error) {
+                        console.log(error.message);
+                    });
+            });
+        });
+
+        commonFuncFactory.clearSelectedNode(
+            $scope.groupTree.currentNode,
+            $scope.mode
+        );
+    }
+
+    $scope.deleteGroup = function () {
+        //Get selected values
+        var defectGroupID = $scope.groupTree.currentNode.nodeID;
+
+        defectGroupFactory.deleteGroup(defectGroupID)
+            .success(function () {
+                //Remove node from tree
+                commonFuncFactory.removeNodeFromTree(
+                    $scope.viewGroups,
+                    defectGroupID
+                );
+            })
+            .error(function (error) {
+                console.log(error.message);
+            });
+
+        commonFuncFactory.clearSelectedNode(
+            $scope.groupTree.currentNode,
+            $scope.mode
+        );
+    }
 }]);
 
 app.controller('ObjectTypeController', ['$scope', function ($scope) {

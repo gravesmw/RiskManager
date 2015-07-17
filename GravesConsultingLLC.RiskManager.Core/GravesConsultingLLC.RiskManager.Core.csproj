@@ -49,6 +49,7 @@
     <Compile Include="Model\Container.cs" />
     <Compile Include="Model\ContainerViewEntry.cs" />
     <Compile Include="Model\ContainerView.cs" />
+    <Compile Include="Model\DefectGroup.cs" />
     <Compile Include="Model\Hierarchy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
