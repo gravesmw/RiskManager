@@ -67,6 +67,7 @@
     <Folder Include="Report\Views\" />
     <Folder Include="Content\Views\" />
     <Folder Include="Security\" />
+    <Folder Include="Report\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Content\Tables\Container.sql" />
@@ -90,5 +91,18 @@
     <Build Include="Security\Content.sql" />
     <Build Include="Security\Metric.sql" />
     <Build Include="Security\Report.sql" />
+    <Build Include="Content\Tables\GradeScale.sql" />
+    <Build Include="Report\Views\DimGradeScale.sql" />
+    <Build Include="Report\Stored Procedures\spUpdateDefectGroup.sql" />
+    <Build Include="Report\Stored Procedures\spUpdateContainerViewEntry.sql" />
+    <Build Include="Report\Stored Procedures\spGetPossibleContainers.sql" />
+    <Build Include="Report\Stored Procedures\spGetDefectGroups.sql" />
+    <Build Include="Report\Stored Procedures\spGetContainerViews.sql" />
+    <Build Include="Report\Stored Procedures\spGetContainerView.sql" />
+    <Build Include="Report\Stored Procedures\spDeleteDefectGroup.sql" />
+    <Build Include="Report\Stored Procedures\spDeleteContainerViewEntry.sql" />
+    <Build Include="Report\Stored Procedures\spCreateView.sql" />
+    <Build Include="Report\Stored Procedures\spCreateDefectGroup.sql" />
+    <Build Include="Report\Stored Procedures\spCreateContainerViewEntry.sql" />
   </ItemGroup>
 </Project>

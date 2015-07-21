@@ -4,3 +4,11 @@
     CONSTRAINT [PK_Container] PRIMARY KEY CLUSTERED ([ContainerID] ASC)
 );
 
+
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Container_Name]
+    ON [Content].[Container]([Name] ASC)
+    INCLUDE([ContainerID]);
+
