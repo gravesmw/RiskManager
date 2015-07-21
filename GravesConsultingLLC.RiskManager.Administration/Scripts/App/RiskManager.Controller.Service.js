@@ -83,6 +83,30 @@ app.factory("defectGroupFactory", ['$http', function ($http) {
     return defectGroupFactory;
 }]);
 
+app.factory("objectTypeFactory", ['$http', function ($http) {
+
+    var urlBase = '/ObjectType';
+    var objectTypeFactory = {};
+
+    objectTypeFactory.getTypes = function () {
+        return $http.get(urlBase);
+    };
+
+    objectTypeFactory.moveType = function (newType) {
+        return $http.put(urlBase + '/' + newType.parentID, newGroup);
+    };
+
+    objectTypeFactory.createType = function (newType) {
+        return $http.post(urlBase, newType);
+    };
+
+    objectTypeFactory.deleteType = function (objectTypeID) {
+        return $http.delete(urlBase + '/' + objectTypeID);
+    };
+
+    return objectTypeFactory;
+}]);
+
 //Service containng shared functions
 app.factory("commonFuncFactory", [ function() {
     

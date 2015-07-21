@@ -1,1 +1,22 @@
-﻿<h1>Object Type</h1>
+﻿
+<div class="row top-buffer">
+    <div class="col-md-4 fd"
+         data-angular-treeview="true"
+         data-tree-id="typeTree"
+         data-tree-model="viewTypes"
+         data-node-id="nodeID"
+         data-node-label="name"
+         data-node-children="children">
+    </div>
+
+    <div class="col-md-8">
+        <div class="btn-group-vertical">
+            <button class="btn btn-default" type="submit" ng-click="createType()">Create New Type</button>
+            <button class="btn btn-default" type="submit" ng-click="moveType()">Move Type</button>
+            <button class="btn btn-default" type="submit" ng-click="deleteType()">Delete Type</button>
+        </div>
+    </div>
+</div>
+
+
+

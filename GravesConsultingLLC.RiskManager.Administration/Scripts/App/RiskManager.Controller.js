@@ -442,6 +442,19 @@ app.controller('DefectGroupController', ['$scope', 'defectGroupFactory', 'ModalS
     }
 }]);
 
-app.controller('ObjectTypeController', ['$scope', function ($scope) {
+app.controller('ObjectTypeController', ['$scope', 'objectTypeFactory', 'ModalService', 'commonFuncFactory',
+    function ($scope, objectTypeFactory, ModalService, commonFuncFactory) {
+
+        $scope.createType = function () {
+
+        }
+
+        $scope.moveType = function () {
+
+        }
+
+        $scope.deleteType = function () {
+
+        }
 
 }]);

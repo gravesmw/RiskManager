@@ -2,13 +2,13 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix5">
+      <Tablix Name="Tablix1">
         <TablixCorner>
           <TablixCornerRows>
             <TablixCornerRow>
               <TablixCornerCell>
                 <CellContents>
-                  <Textbox Name="Textbox33">
+                  <Textbox Name="Textbox10">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -19,20 +19,18 @@
                             <Style>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
-                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox33</rd:DefaultName>
+                    <rd:DefaultName>Textbox10</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
-                      <BackgroundColor>#4e387e</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -55,6 +53,9 @@
             <TablixColumn>
               <Width>1in</Width>
             </TablixColumn>
+            <TablixColumn>
+              <Width>0.46875in</Width>
+            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
@@ -76,9 +77,7 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Object_Count</rd:DefaultName>
@@ -111,9 +110,7 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Raw_Score</rd:DefaultName>
@@ -132,26 +129,58 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="AverageScore">
+                    <Textbox Name="Average_Score">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!AverageScore.Value)</Value>
+                              <Value>=Sum(Fields!Average_Score.Value)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Average_Score</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Grade">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!Grade.Value)</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>AverageScore</rd:DefaultName>
+                      <rd:DefaultName>Grade</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -180,7 +209,7 @@
               <TablixHeader>
                 <Size>0.25in</Size>
                 <CellContents>
-                  <Textbox Name="Textbox31">
+                  <Textbox Name="Textbox8">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -191,7 +220,6 @@
                             <Style>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
-                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -200,13 +228,12 @@
                         </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox31</rd:DefaultName>
+                    <rd:DefaultName>Textbox8</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
-                      <BackgroundColor>#4e387e</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -220,7 +247,7 @@
               <TablixHeader>
                 <Size>0.25in</Size>
                 <CellContents>
-                  <Textbox Name="Textbox40">
+                  <Textbox Name="Textbox21">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -231,8 +258,6 @@
                             <Style>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
-                              <Format>#,0.00;(#,0.00)</Format>
-                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -241,13 +266,12 @@
                         </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox40</rd:DefaultName>
+                    <rd:DefaultName>Textbox21</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
-                      <BackgroundColor>#4e387e</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -261,7 +285,7 @@
               <TablixHeader>
                 <Size>0.25in</Size>
                 <CellContents>
-                  <Textbox Name="Textbox1">
+                  <Textbox Name="Textbox23">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -272,7 +296,6 @@
                             <Style>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
-                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -281,13 +304,50 @@
                         </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox1</rd:DefaultName>
+                    <rd:DefaultName>Textbox23</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
-                      <BackgroundColor>#4e387e</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox25">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Grade</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox25</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -314,7 +374,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>3.5in</Size>
+                <Size>3.04167in</Size>
                 <CellContents>
                   <Textbox Name="Containers">
                     <CanGrow>true</CanGrow>
@@ -354,309 +414,73 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>RiskData</DataSetName>
-        <Top>1.51167in</Top>
+        <Top>0.16667in</Top>
         <Height>0.5in</Height>
-        <Width>6.5in</Width>
+        <Width>6.51042in</Width>
         <Style>
           <Border>
-            <Color>LightGrey</Color>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Chart Name="Chart1">
-        <ChartCategoryHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Group Name="Chart1_CategoryGroup">
-                <GroupExpressions>
-                  <GroupExpression>=Fields!Containers.Value</GroupExpression>
-                </GroupExpressions>
-              </Group>
-              <SortExpressions>
-                <SortExpression>
-                  <Value>=Fields!Containers.Value</Value>
-                </SortExpression>
-              </SortExpressions>
-              <Label>=Fields!Containers.Value</Label>
-            </ChartMember>
-          </ChartMembers>
-        </ChartCategoryHierarchy>
-        <ChartSeriesHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Label>Average Score</Label>
-            </ChartMember>
-          </ChartMembers>
-        </ChartSeriesHierarchy>
-        <ChartData>
-          <ChartSeriesCollection>
-            <ChartSeries Name="Raw_Score">
-              <ChartDataPoints>
-                <ChartDataPoint>
-                  <ChartDataPointValues>
-                    <Y>=Sum(Fields!AverageScore.Value)</Y>
-                  </ChartDataPointValues>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                  <Style>
-                    <Color>MediumPurple</Color>
-                  </Style>
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <DataElementOutput>Output</DataElementOutput>
-                </ChartDataPoint>
-              </ChartDataPoints>
-              <Style />
-              <ChartEmptyPoints>
-                <Style />
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-              </ChartEmptyPoints>
-              <ValueAxisName>Primary</ValueAxisName>
-              <CategoryAxisName>Primary</CategoryAxisName>
-              <ChartSmartLabel>
-                <CalloutLineColor>Black</CalloutLineColor>
-                <MinMovingDistance>0pt</MinMovingDistance>
-              </ChartSmartLabel>
-            </ChartSeries>
-          </ChartSeriesCollection>
-        </ChartData>
-        <ChartAreas>
-          <ChartArea Name="Default">
-            <ChartCategoryAxes>
-              <ChartAxis Name="Primary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption>First Level Containers</Caption>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <MaxFontSize>8pt</MaxFontSize>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-              <ChartAxis Name="Secondary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Location>Opposite</Location>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-            </ChartCategoryAxes>
-            <ChartValueAxes>
-              <ChartAxis Name="Primary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-              <ChartAxis Name="Secondary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Location>Opposite</Location>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-            </ChartValueAxes>
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-            </Style>
-          </ChartArea>
-        </ChartAreas>
-        <Palette>BrightPastel</Palette>
-        <ChartBorderSkin>
-          <Style>
-            <BackgroundColor>Gray</BackgroundColor>
-            <BackgroundGradientType>None</BackgroundGradientType>
-            <Color>White</Color>
-          </Style>
-        </ChartBorderSkin>
-        <ChartNoDataMessage Name="NoDataMessage">
-          <Caption>No Data Available</Caption>
-          <Style>
-            <BackgroundGradientType>None</BackgroundGradientType>
-            <TextAlign>General</TextAlign>
-            <VerticalAlign>Top</VerticalAlign>
-          </Style>
-        </ChartNoDataMessage>
-        <DataSetName>RiskData</DataSetName>
-        <Filters>
-          <Filter>
-            <FilterExpression>=Fields!Containers.LevelNumber</FilterExpression>
-            <Operator>Equal</Operator>
-            <FilterValues>
-              <FilterValue>=2</FilterValue>
-            </FilterValues>
-          </Filter>
-        </Filters>
-        <Top>0.04167in</Top>
-        <Left>0.12375in</Left>
-        <Height>1.38542in</Height>
-        <Width>6.125in</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>White</BackgroundColor>
-          <BackgroundGradientType>None</BackgroundGradientType>
-        </Style>
-      </Chart>
     </ReportItems>
-    <Height>2.05208in</Height>
+    <Height>0.77083in</Height>
     <Style />
   </Body>
   <Width>6.51042in</Width>
   <Page>
     <PageHeader>
-      <Height>1.0925in</Height>
+      <Height>0.54042in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Image3">
-          <Source>Embedded</Source>
-          <Value>RiskManager</Value>
-          <Height>1.01042in</Height>
-          <Width>1.35417in</Width>
+        <Rectangle Name="Rectangle1">
+          <ReportItems>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Risk Manager</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#777777</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>0.06125in</Top>
+              <Left>0.11333in</Left>
+              <Height>0.25in</Height>
+              <Width>2.375in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <KeepTogether>true</KeepTogether>
+          <Left>0.01042in</Left>
+          <Height>0.43625in</Height>
+          <Width>6.5in</Width>
           <Style>
             <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
-        <Line Name="Line2">
-          <Top>1.06125in</Top>
-          <Left>0.12375in</Left>
-          <Height>0in</Height>
-          <Width>6.27083in</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
+              <Color>#e7e7e7</Color>
               <Style>Solid</Style>
             </Border>
+            <BackgroundColor>#f8f8f8</BackgroundColor>
           </Style>
-        </Line>
+        </Rectangle>
       </ReportItems>
       <Style>
         <Border>
@@ -680,7 +504,7 @@
                   <Style>
                     <FontSize>8pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Color>#4e387e</Color>
+                    <Color>#777777</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -715,7 +539,7 @@
                   <Style>
                     <FontSize>8pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Color>#4e387e</Color>
+                    <Color>#777777</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -751,7 +575,7 @@
                   <Style>
                     <FontSize>8pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Color>#4e387e</Color>
+                    <Color>#777777</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -795,10 +619,10 @@
         </Border>
       </Style>
     </PageFooter>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <LeftMargin>0.5in</LeftMargin>
+    <RightMargin>0.5in</RightMargin>
+    <TopMargin>0.5in</TopMargin>
+    <BottomMargin>0.5in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -892,7 +716,7 @@ FROM [Risk Manager Cube]
             <Value>="[Container View].[View Name].[" &amp; Parameters!ContainerView.Value &amp; "]"</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText> SELECT NON EMPTY { [Measures].[Object Count], [Measures].[Raw Score], [Measures].[AverageScore] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Container View].[Containers].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@ContainerViewViewName, CONSTRAINED) ) ON COLUMNS FROM [Risk Manager Cube]) WHERE ( IIF( STRTOSET(@ContainerViewViewName, CONSTRAINED).Count = 1, STRTOSET(@ContainerViewViewName, CONSTRAINED), [Container View].[View Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText> SELECT NON EMPTY { [Measures].[Object Count], [Measures].[Raw Score], [Measures].[Average Score], [Measures].[Grade] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Container View].[Containers].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@ContainerViewViewName, CONSTRAINED) ) ON COLUMNS FROM [Risk Manager Cube]) WHERE ( IIF( STRTOSET(@ContainerViewViewName, CONSTRAINED).Count = 1, STRTOSET(@ContainerViewViewName, CONSTRAINED), [Container View].[View Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -945,10 +769,26 @@ FROM [Risk Manager Cube]
                   </Item>
                   <Item>
                     <ID xsi:type="Measure">
-                      <MeasureName>AverageScore</MeasureName>
-                      <UniqueName>[Measures].[AverageScore]</UniqueName>
+                      <MeasureName>Average Score</MeasureName>
+                      <UniqueName>[Measures].[Average Score]</UniqueName>
                     </ID>
-                    <ItemCaption>AverageScore</ItemCaption>
+                    <ItemCaption>Average Score</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Grade</MeasureName>
+                      <UniqueName>[Measures].[Grade]</UniqueName>
+                    </ID>
+                    <ItemCaption>Grade</ItemCaption>
                     <BackColor>true</BackColor>
                     <ForeColor>true</ForeColor>
                     <FontFamily>true</FontFamily>
@@ -978,7 +818,7 @@ FROM [Risk Manager Cube]
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement> SELECT NON EMPTY { [Measures].[Object Count], [Measures].[Raw Score], [Measures].[AverageScore] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Container View].[Containers].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@ContainerViewViewName, CONSTRAINED) ) ON COLUMNS FROM [Risk Manager Cube]) WHERE ( IIF( STRTOSET(@ContainerViewViewName, CONSTRAINED).Count = 1, STRTOSET(@ContainerViewViewName, CONSTRAINED), [Container View].[View Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement> SELECT NON EMPTY { [Measures].[Object Count], [Measures].[Raw Score], [Measures].[Average Score], [Measures].[Grade] } ON COLUMNS, NON EMPTY { (DESCENDANTS([Container View].[Containers].[Level 02].ALLMEMBERS) ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME, PARENT_UNIQUE_NAME, LEVEL_NUMBER ON ROWS FROM ( SELECT ( STRTOSET(@ContainerViewViewName, CONSTRAINED) ) ON COLUMNS FROM [Risk Manager Cube]) WHERE ( IIF( STRTOSET(@ContainerViewViewName, CONSTRAINED).Count = 1, STRTOSET(@ContainerViewViewName, CONSTRAINED), [Container View].[View Name].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
                   <Name>ContainerViewViewName</Name>
@@ -1011,8 +851,12 @@ FROM [Risk Manager Cube]
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Raw Score]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="AverageScore">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[AverageScore]" /&gt;</DataField>
+        <Field Name="Average_Score">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Average Score]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Grade">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Grade]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
@@ -1031,18 +875,6 @@ FROM [Risk Manager Cube]
       </ValidValues>
     </ReportParameter>
   </ReportParameters>
-  <EmbeddedImages>
-    <EmbeddedImage Name="RiskManager">
-      <MIMEType>image/jpeg</MIMEType>
-      <ImageData>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</ImageData>
-    </EmbeddedImage>
-  </EmbeddedImages>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0c8082dd-0f4d-45de-b39b-cf2fe3778181</rd:ReportID>
 </Report>
