@@ -37,7 +37,7 @@ namespace GravesConsultingLLC.RiskManager.Administration.Controllers
 
         [Route("{defectgroupid:int}")]
         [HttpDelete]
-        public IHttpActionResult DeleteContainerFromView(int DefectGroupID)
+        public IHttpActionResult Delete(int DefectGroupID)
         {
             DefectGroup.Delete(
                    DefectGroupID, _Repository
@@ -48,7 +48,7 @@ namespace GravesConsultingLLC.RiskManager.Administration.Controllers
 
         [Route("{defectgroupid:int}")]
         [HttpPut]
-        public IHttpActionResult UpdateContainerFromView(int DefectGroupID, DefectGroup UpdatedDefectGroup)
+        public IHttpActionResult Update(int DefectGroupID, DefectGroup UpdatedDefectGroup)
         {
             UpdatedDefectGroup.Update(_Repository);
 

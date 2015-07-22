@@ -445,16 +445,141 @@ app.controller('DefectGroupController', ['$scope', 'defectGroupFactory', 'ModalS
 app.controller('ObjectTypeController', ['$scope', 'objectTypeFactory', 'ModalService', 'commonFuncFactory',
     function ($scope, objectTypeFactory, ModalService, commonFuncFactory) {
 
-        $scope.createType = function () {
+        getTypes();
 
+        function getTypes() {
+            objectTypeFactory.getTypes()
+                .success(function (types) {
+                    $scope.viewTypes = types;
+                })
+                .error(function (error) {
+                    console.log(error.message);
+                });
+        }
+
+        $scope.createType = function () {
+            ModalService.showModal({
+                templateUrl: "/Templates/AddNodeModal.html",
+                controller: "addNode",
+                inputs: {
+                    title: "Create Object Type",
+                    description: true
+                }
+            }).then(function (modal) {
+                modal.element.modal();
+                modal.close.then(function (result) {
+
+                    var parentGroupID = null;
+                    if ($scope.typeTree.currentNode && $scope.typeTree.currentNode.selected == 'selected') {
+                        parentGroupID = $scope.typeTree.currentNode.nodeID
+                    }
+
+                    var newType = {
+                        name: result.name,
+                        description: result.description,
+                        parentID: parentGroupID
+                    };
+
+                    objectTypeFactory.createType(newType)
+                        .success(function (type) {
+                            delete type['description']
+                            if ($scope.typeTree.currentNode) {
+                                $scope.typeTree.currentNode.children.push(type);
+                            }
+                            else {
+                                //Verify model array exists before push
+                                if ($scope.viewTypes == undefined) {
+                                    $scope.viewTypes = [];
+                                }
+                                $scope.viewTypes.push(type);
+                            }
+                        })
+                    .error(function (error) {
+                        console.log(error.message);
+                    });
+                })
+            });
         }
 
         $scope.moveType = function () {
+            //Verify source node is selected
+            if (!commonFuncFactory.verifySelectedNode($scope.typeTree.currentNode)) {
+                return;
+            }
 
+            var possibleParents =
+                 commonFuncFactory.getPossibleParents($scope.viewTypes, $scope.typeTree.currentNode.parentID);
+
+            ModalService.showModal({
+                templateUrl: "/Templates/MoveNodeModal.html",
+                controller: "moveNode",
+                inputs: {
+                    title: "Change Type Parent",
+                    possibleParents: possibleParents
+                }
+            }).then(function (modal) {
+                modal.element.modal();
+                modal.close.then(function (result) {
+
+                    //Create instance of group to post to server with 
+                    //new parent
+                    var updatedType = {
+                        nodeID: $scope.typeTree.currentNode.nodeID,
+                        name: $scope.typeTree.currentNode.name,
+                        parentID: result.nodeID
+                    }
+
+                    objectTypeFactory.moveType(updatedType)
+                        .success(function () {
+
+                            //Remove node from source parent in tree
+                            commonFuncFactory.removeNodeFromTree(
+                                $scope.viewTypes,
+                                updatedType.nodeID);
+
+                            //Add children to container view instance if any
+                            if ($scope.typeTree.currentNode.children == undefined || $scope.typeTree.currentNode.children.length > 0) {
+                                var children = [];
+                                updatedType["children"] = $scope.typeTree.currentNode.children;
+                            }
+
+                            //Add node to target parent in tree
+                            commonFuncFactory.addNodeToTree(
+                                $scope.viewTypes,
+                                updatedType);
+                        })
+                        .error(function (error) {
+                            console.log(error.message);
+                        });
+                });
+            });
+
+            commonFuncFactory.clearSelectedNode(
+                $scope.typeTree.currentNode,
+                $scope.mode
+            );
         }
 
         $scope.deleteType = function () {
+            //Get selected values
+            var objectTypeID = $scope.typeTree.currentNode.nodeID;
 
+            objectTypeFactory.deleteType(objectTypeID)
+                .success(function () {
+                    //Remove node from tree
+                    commonFuncFactory.removeNodeFromTree(
+                        $scope.viewTypes,
+                        objectTypeID
+                    );
+                })
+                .error(function (error) {
+                    console.log(error.message);
+                });
+
+            commonFuncFactory.clearSelectedNode(
+                $scope.typeTree.currentNode,
+                $scope.mode
+            );
         }
 
 }]);

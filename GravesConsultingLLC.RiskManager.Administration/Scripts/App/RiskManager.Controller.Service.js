@@ -93,7 +93,7 @@ app.factory("objectTypeFactory", ['$http', function ($http) {
     };
 
     objectTypeFactory.moveType = function (newType) {
-        return $http.put(urlBase + '/' + newType.parentID, newGroup);
+        return $http.put(urlBase + '/' + newType.parentID, newType);
     };
 
     objectTypeFactory.createType = function (newType) {

@@ -104,5 +104,9 @@
     <Build Include="Report\Stored Procedures\spCreateView.sql" />
     <Build Include="Report\Stored Procedures\spCreateDefectGroup.sql" />
     <Build Include="Report\Stored Procedures\spCreateContainerViewEntry.sql" />
+    <Build Include="Report\Stored Procedures\spUpdateObjectType.sql" />
+    <Build Include="Report\Stored Procedures\spGetObjectTypes.sql" />
+    <Build Include="Report\Stored Procedures\spDeleteObjectType.sql" />
+    <Build Include="Report\Stored Procedures\spCreateObjectType.sql" />
   </ItemGroup>
 </Project>

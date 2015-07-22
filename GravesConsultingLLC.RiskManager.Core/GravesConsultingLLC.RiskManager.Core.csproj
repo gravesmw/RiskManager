@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Extensions.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Model\Container.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Model\ContainerView.cs" />
     <Compile Include="Model\DefectGroup.cs" />
     <Compile Include="Model\Hierarchy.cs" />
+    <Compile Include="Model\ObjectType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

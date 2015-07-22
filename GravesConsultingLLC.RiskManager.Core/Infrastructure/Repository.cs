@@ -52,6 +52,19 @@ namespace GravesConsultingLLC.RiskManager.Core.Infrastructure
             );
         }
 
+        public IDataReader GetReader(string Procedure, Dictionary<string, object> Parameters, bool IsProcedure)
+        {
+            return
+                _DBConnection.ExecuteReader(
+                    new CommandDefinition(
+                        Procedure,
+                        Parameters,
+                        commandType: IsProcedure ? CommandType.StoredProcedure : CommandType.Text
+                        ),
+                        CommandBehavior.CloseConnection
+                );
+        }
+
         public void Put(string Procedure, Dictionary<string, object> Parameters)
         {
             _DBConnection.Execute(
