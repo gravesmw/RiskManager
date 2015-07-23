@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 4 sp1 (x64) (http://www.altova.com) by Mike Graves (Graves Consulting LLC) -->
+<xs:schema xmlns:gc="http://gravesconsultingllc/schema/discovery" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://gravesconsultingllc/schema/discovery" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+	<xs:element name="discovery">
+		<xs:annotation>
+			<xs:documentation>root element for discovery</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="objects">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="object">
+								<xs:complexType>
+									<xs:sequence minOccurs="0">
+										<xs:element name="containers">
+											<xs:complexType>
+												<xs:sequence maxOccurs="unbounded">
+													<xs:element name="container">
+														<xs:complexType>
+															<xs:attribute name="name">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:minLength value="0"/>
+																		<xs:maxLength value="128"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="id" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="0"/>
+												<xs:maxLength value="400"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="name">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="0"/>
+												<xs:maxLength value="400"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="object-type">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="0"/>
+												<xs:maxLength value="128"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="relationships" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="relationship">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="child">
+											<xs:complexType>
+												<xs:attribute name="child-id">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="0"/>
+															<xs:maxLength value="400"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="manager-id">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="0"/>
+												<xs:maxLength value="400"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:string"/>
+			<xs:attribute name="page-number" type="xs:integer"/>
+			<xs:attribute name="last-page" type="xs:boolean"/>
+		</xs:complexType>
+		<xs:unique name="object_id_key">
+			<xs:selector xpath="gc:objects/gc:object"/>
+			<xs:field xpath="@id"/>
+		</xs:unique>
+		<xs:keyref name="manager_id_ref" refer="gc:object_id_key">
+			<xs:selector xpath="gc:relationships/gc:relationship"/>
+			<xs:field xpath="@manager-id"/>
+		</xs:keyref>
+		<xs:keyref name="child_id_ref" refer="gc:object_id_key">
+			<xs:selector xpath="gc:relationships/gc:relationship/gc:child"/>
+			<xs:field xpath="@child-id"/>
+		</xs:keyref>
+	</xs:element>
+</xs:schema>
