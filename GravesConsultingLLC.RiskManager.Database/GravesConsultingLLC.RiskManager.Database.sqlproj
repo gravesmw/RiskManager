@@ -68,6 +68,7 @@
     <Folder Include="Content\Views\" />
     <Folder Include="Security\" />
     <Folder Include="Report\Stored Procedures\" />
+    <Folder Include="Physical" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Content\Tables\Container.sql" />
@@ -108,5 +109,8 @@
     <Build Include="Report\Stored Procedures\spGetObjectTypes.sql" />
     <Build Include="Report\Stored Procedures\spDeleteObjectType.sql" />
     <Build Include="Report\Stored Procedures\spCreateObjectType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Physical\RiskManager.8.4.15.bak" />
   </ItemGroup>
 </Project>

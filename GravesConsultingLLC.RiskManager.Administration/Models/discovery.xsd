@@ -18,7 +18,7 @@
 												<xs:sequence maxOccurs="unbounded">
 													<xs:element name="container">
 														<xs:complexType>
-															<xs:attribute name="name">
+															<xs:attribute name="name" use="required">
 																<xs:simpleType>
 																	<xs:restriction base="xs:string">
 																		<xs:minLength value="0"/>
@@ -40,7 +40,7 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:attribute>
-									<xs:attribute name="name">
+									<xs:attribute name="name" use="required">
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
 												<xs:minLength value="0"/>
@@ -48,7 +48,7 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:attribute>
-									<xs:attribute name="object-type">
+									<xs:attribute name="object-type" use="required">
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
 												<xs:minLength value="0"/>
@@ -69,7 +69,7 @@
 									<xs:sequence maxOccurs="unbounded">
 										<xs:element name="child">
 											<xs:complexType>
-												<xs:attribute name="child-id">
+												<xs:attribute name="child-id" use="required">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
 															<xs:minLength value="0"/>
@@ -80,7 +80,7 @@
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="manager-id">
+									<xs:attribute name="manager-id" use="required">
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
 												<xs:minLength value="0"/>
@@ -94,9 +94,16 @@
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
-			<xs:attribute name="id" type="xs:string"/>
-			<xs:attribute name="page-number" type="xs:integer"/>
-			<xs:attribute name="last-page" type="xs:boolean"/>
+			<xs:attribute name="id" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="400"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="page-number" type="xs:integer" use="required"/>
+			<xs:attribute name="last-page" type="xs:boolean" use="required"/>
 		</xs:complexType>
 		<xs:unique name="object_id_key">
 			<xs:selector xpath="gc:objects/gc:object"/>
